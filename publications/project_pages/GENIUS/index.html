@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners -->
+  <meta name="description" content="GENIUS: A Generative Framework for Universal Multimodal Search">
+  <meta property="og:title" content="GENIUS: A Generative Framework for Universal Multimodal Search"/>
+  <meta property="og:description" content="An academic project exploring robust fine-tuning methods for zero-shot models."/>
+  <meta property="og:url" content="https://your-website-url.com"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="GENIUS: A Generative Framework for Universal Multimodal Search">
+  <meta name="twitter:description" content="An academic project exploring robust fine-tuning methods for zero-shot models.">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble, zero-shot models, machine learning, AI research">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GENIUS: A Generative Framework for Universal Multimodal Search</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63155504-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-63155504-4');
+  </script>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    /* Custom Styles */
+    .publication-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .publication-authors a {
+      color: #363636;
+      text-decoration: none;
+    }
+    .publication-authors a:hover {
+      text-decoration: underline;
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #4a4a4a;
+      margin-top: 0.5rem;
+    }
+    .fig-label {
+      font-weight: bold;
+    }
+    .paper-info-box {
+      background-color: #f9f9f9;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    .line {
+      border-top: 1px solid #e5e5e5;
+      margin: 2rem 0;
+    }
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GENIUS: A Generative Framework for Universal Multimodal Search</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="http://cvlab.postech.ac.kr/~sungyeon" target="_blank">Sungyeon Kim</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Xinliang Zhu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Xiaofan Lin</a><sup>1</sup>,
+              </span> <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Muhammet Bastan</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Douglas Gray</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cvlab.postech.ac.kr/~suhakwak" target="_blank">Suha Kwak</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup> Amazon, US<br>
+                <sup>2</sup> POSTECH, Korea <br>
+                CVPR 2025
+              </span>
+            </div>
+            
+            <br>
+            <div class="publication-links">
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Supplementary PDF link -->
+              <!-- <span class="link-block">
+                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02642-supp.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span> -->
+
+              <!-- Github link -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/tjddus9597/R-Adapter-ECCV2024" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+
+              <!-- ArXiv abstract Link -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+          <!-- 중앙 정렬된 이미지 -->
+          <div class="has-text-centered">
+            <figure class="image" style="width:90%; margin: 0 auto;">
+              <img src="static/images/thumbnail.png" alt="Thumbnail Image"/>
+            </figure>
+          </div>
+          
+          <div class="caption">
+          <h2 class="subtitle has-text-centered">
+            R-Adapter combines the strengths of robust fine-tuning and parameter-efficient fine-tuning (PEFT).
+          </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content">
+            <p align="justify">
+              Large-scale image-text pre-trained models enable zero-shot classification and provide consistent accuracy across various data distributions. 
+              Nonetheless, optimizing these models in downstream tasks typically requires fine-tuning, which reduces generalization to out-of-distribution (OOD) data and demands extensive computational resources. We introduce Robust Adapter (R-Adapter), a novel method for finetuning zero-shot models to downstream tasks while simultaneously addressing both these issues. Our method integrates lightweight modules into the pre-trained model and employs novel self-ensemble techniques to boost OOD robustness and reduce storage expenses substantially. Furthermore, we propose MPM-NCE loss designed for fine-tuning on vision-language downstream tasks. It ensures precise alignment of multiple image-text pairs and discriminative feature learning. By extending the benchmark for robust fine-tuning beyond classification to include diverse tasks such as cross-modal retrieval and open vocabulary segmentation, we demonstrate the broad applicability of R-Adapter. Our extensive experiments demonstrate that R-Adapter achieves state-of-the-art performance across a diverse set of tasks, tuning only 13% of the parameters of the CLIP encoders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>            
+  <!-- End Abstract Section -->
+
+
+  <!-- Experimental Results Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+
+      <!-- 1. ImageNet classification under distribution shifts -->
+      <div class="content">
+        <h3 class="title is-5">- ImageNet classification under distribution shifts</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:85%; margin: 0 auto;">
+            <img src="static/images/quantitative_results.png" alt="ImageNet Classification Results"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            <strong class="fig-label">Table 1</strong>. Top-1 accuracy of models with different robust fine-tuning on ImageNet (ID)
+            and OOD datasets. “OOD avg” is the average accuracy across the five OOD datasets.
+            Entries in green indicate fewer parameters than full fine-tuning, and red use more.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Few-shot ImageNet classification -->
+      <div class="content">
+        <h3 class="title is-5">- Few-shot ImageNet classification</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:85%; margin: 0 auto;">
+            <img src="static/images/quantitative_results2.png" alt="Few-shot ImageNet Classification Results"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            <strong class="fig-label">Table 2</strong>. Top-1 accuracy for adapting CLIP to 16-shot ImageNet classification on ID
+            and OOD datasets. OOD avg is the average accuracy across the four OOD datasets.
+            “r-Rank” denotes our models with adapters employing low-rank decomposition while
+            “Full-Rank” is no decomposition. All methods adopt CLIP ViT-B/16 as the backbone.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Cross-modal retrieval -->
+      <div class="content">
+        <h3 class="title is-5">- Cross-modal retrieval</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:85%; margin: 0 auto;">
+            <img src="static/images/quantitative_results3.png" alt="Cross-modal Retrieval Results"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            <strong class="fig-label">Table 3</strong>. Cross-modal retrieval performance on the COCO (5K test set) and Flickr30K
+            datasets in Recall at K (R@K). B and L denote the use of 12-layer and 24-layer transformer encoders, respectively. FLYPL training has failed due to memory constraints.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4. Open-vocabulary segmentation -->
+      <div class="content">
+        <h3 class="title is-5">- Open-vocabulary segmentation</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:85%; margin: 0 auto;">
+            <img src="static/images/quantitative_results4.png" alt="Open-vocabulary Segmentation Results"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            <strong class="fig-label">Table 4</strong>. Comparison of mIoU results between the OVSeg fine-tuned with our method
+            and existing open-vocabulary segmentation models. Note that OVSeg (Org.) is trained
+            in two stages, starting with full CLIP model fine-tuning followed by mask prompt
+            tuning, whereas OVSeg (Ours) involves single-stage adapter training.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Experimental Results Section -->
+
+  <!-- Ablation Studies Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+
+      <!-- 1. Effectiveness of key components -->
+      <div class="content">
+        <h3 class="title is-5">- Effectiveness of key components</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:85%; margin: 0 auto;">
+            <img src="static/images/ablation1.png" alt="Ablation Study Results"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            <strong class="fig-label">Table 5</strong>. Ablation study on key components of our method and comparison with the
+            other adapter-tuning methods using full-rank structure. The experiments are performed
+            on the ImageNet classification with ViT-B/32. The last row (E10) corresponds to our
+            default configuration. DO: Dropout in Adapters. DP: Drop-path in pre-trained layers.
+            AD: Adapter Dropping. AC: Accumulation. RS: Re-scaling. LS: Label Smoothing.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Re-scaling coefficient -->
+      <div class="content">
+        <h3 class="title is-5">- Re-scaling coefficient</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:75%; margin: 0 auto;">
+            <img src="static/images/coeff_variation.png" alt="Re-scaling Coefficient Variation"/>
+          </figure>
+        </div>
+        
+        <div class="caption has-text-centered">
+          <p class="caption-content">
+            <strong class="fig-label">Figure 1</strong>. Performance of our method varying re-scaling coefficient &alpha; against WiSE-FT.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Ablation Studies Section -->
+
+  <!-- Acknowledgements Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title">Acknowledgements</h2>
+      <p align="justify">
+        Part of this work was done while Sungyeon Kim was an
+        intern at Amazon. Sungyeon Kim and Suha Kwak were
+        supported by NRF grants (RS-2021-NR059830–30%, RS2022-II220290–30%, RS-2022-II220926–30%) and IITP
+        grants (RS-2019-II191906–10%, AI Graduate School -
+        POSTECH) funded by Ministry of Science and ICT, Korea.
+      </p>
+      <div class="line"></div>
+    </div>
+  </section>
+  <!-- End Acknowledgements Section -->
+
+  <!-- BibTeX Citation Section -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{kim2025genius,
+   title={GENIUS: A Generative Framework for Universal Multimodal Search},
+   author={Kim, Sungyeon and Zhu, Xinliang and Lin, Xiaofan and Bastan, Muhammet and Gray, Douglas and Kwak, Suha },
+   booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+   year={2025}
+  }
+  </code></pre>
+    </div>
+  </section>
+  <!-- End BibTeX Citation Section -->
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website; we just ask that you link back to this page in the footer.<br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Section -->
+
+  <!-- Statcounter Tracking Code -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- End of Statcounter Code -->
+
+</body>
+</html>
