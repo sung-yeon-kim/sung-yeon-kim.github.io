@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="/lab/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/lab/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/lab/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/lab/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/lab/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/lab/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/lab/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/lab/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/lab/favicons/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-32x32.png" sizes="32x32">
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Deep Metric Learning" />
+	<meta name="keywords" content="LogRatio Loss" />	
+	<meta name="author" content="Sungyeon Kim" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<title>Deep Metric Learning Beyond Binary Supervision</title>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-63155504-4', 'auto');
+          ga('send', 'pageview');
+	  </script>
+	  <style>
+		  div {
+			  width: 100%;
+		}
+	  </style>
+</head>
+
+
+<body>
+
+	<div id="header">
+		<div class="wrap">
+		   <div id="intro">
+				<h1 align="center" id="logo">
+				Deep Metric Learning Beyond Binary Supervision
+			  </h1>
+		  <div align="center">
+			 <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+				<tr>
+				   <td colspan="5" width="20%" height="30" align='center'>
+					  <font size="3"><a target="_blank" href="https://github.com/tjddus9597/" target="_blank">Sungyeon Kim<sup>1</sup></a></font>
+				   </td>
+				   <td colspan="5" width="20%" height="30" align='center'>
+					  <font size="3"><a target="_blank" href="index.html" target="_blank">Minkyo Seo<sup>1</sup></a></font>
+				   </td>
+				   <td colspan="5" width="20%" height="30" align='center'>
+					<font size="3"><a target="_blank" href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev<sup>2</sup></a></font>
+				 </td>
+				   <td colspan="5" width="20%" height="30" align='center'>
+					  <font size="3"><a target="_blank" href="http://cvlab.postech.ac.kr/~suhakwak">Suha Kwak<sup>1</sup></a></font>
+				   </td>
+				   <td colspan="5" width="20%" height="30" align='center'>
+					  <font size="3"><a target="_blank" href="http://cvlab.postech.ac.kr/~mcho">Minsu Cho<sup>1</sup></a></font>
+				   </td>
+			   </tr>
+			<tr>
+				   <td height="30" colspan="5" align='center'><font size="3"></font></td>			     			 
+				   <td height="30" colspan="5" align='center'><font size="3"><sup>1</sup>POSTECH</font></td>
+				   <td height="30" colspan="5" align='center'><font size="3"></font></td>	
+				   <td height="30" colspan="5" align='center'><font size="3"><sup>2</sup>Inria</font></td>
+				   <td height="30" colspan="5" align='center'><font size="3"></font></td>
+			</tr>
+			 </table>
+		  </div>
+		   </div>
+	   <div class="nline1"></div>
+		</div>
+	 </div>
+	
+   <div id="cont">
+      <div class="wrap">        	
+         <h2 id="subject">Abstract</h1>
+         <p align="justify">
+			Metric Learning for visual similarity has mostly adopted
+			binary supervision indicating whether a pair of images are
+			of the same class or not. Such a binary indicator covers only
+			a limited subset of image relations, and is not sufficient to
+			represent semantic similarity between images described by
+			continuous and/or structured labels such as object poses,
+			image captions, and scene graphs. Motivated by this, we
+			present a novel method for deep metric learning using continuous
+			labels. First, we propose a new triplet loss that allows
+			distance ratios in the label space to be preserved in
+			the learned metric space. The proposed loss thus enables
+			our model to learn the degree of similarity rather than just
+			the order. Furthermore, we design a triplet mining strategy
+			adapted to metric learning with continuous labels. We address
+			three different image retrieval tasks with continuous
+			labels in terms of human poses, room layouts and image
+			captions, and demonstrate the superior performance of our
+			approach compared to previous methods.
+</p>
+         <div class="line"></div>
+      </div>
+   </div>
+
+
+   <div id="cont">
+      <div class="wrap" align="center">
+         <h2 id="subject" align="left">Our Framework vs Conventional Metric Learning </h2>
+         <img src="images/fig1_motivation.png" style="width:50%;height:auto;text-align:center;"/>
+         <div class="caption">
+            <p class="caption-content">
+               <strong class="fig-label">Figure 1</strong>. 
+			    A conceptual illustration for comparing existing methods
+				and ours. Each image is labeled by human
+				pose, and colored in red if its pose similarity to the anchor is high.
+				(a) Existing methods categorize neighbors into positive and negative
+				classes, and learn a metric space where positive images are
+				close to the anchor and negative ones far apart. In such a space,
+				the distance between a pair of images is not necessarily related to
+				their semantic similarity since the order and degrees of similarities
+				between them are disregarded. (b) Our approach allows distance
+				ratios in the label space to be preserved in the learned metric space
+				so as to overcome the aforementioned limitation.
+		 </p>
+         </div>
+			<div class="line"></div>
+      </div>
+   </div>      
+   </div>  
+
+   <div id="cont">
+   <div class="wrap" align="center">
+	<h2 id="subject" align="left">Quantitative Results</h2>
+	<h3 id="subject" align="left">1. Results of Three Retrieval Tasks Based on Continuous Similarities</h3>
+	<img src="images/quantitative_results.JPG" style="width:95%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 2</strong>.
+		Quantitative evaluation of the three retrieval tasks in terms of mean label distance (top) and mean nDCG (bottom).
+
+	</div>
+	<h3 id="subject" align="left">2. Results of Image Captioning</h3>
+	<img src="images/quantitative_results_caption.JPG" style="width:60%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 1</strong>.
+		Captioning performance on the Karpathy test split.
+		We report scores obtained by a single model with the beam search
+		algorithm (beam size = 2). ATT: Att2all2. TD: Topdown.
+		Img: ImageNet pretrained feature. Cap: Caption-aware feature.
+		XE: Pretrained with cross-entropy. RL: Finetuned by reinforcement
+		learning. B4: BLEU-4. C: CIDEr-D. M: METEOR. R: ROGUE-L. S: SPICE.
+	</p>
+	</div>
+	</div>
+   </div>
+
+   <div id="cont">
+   <div class="wrap" align="center">
+	<h2 id="subject" align="left">Qualitative Results</h2>
+	<h3 id="subject" align="left">1. Qualitative Results of Human Pose Retrieval.</h3>
+	<img src="images/qualitative_results_pose.JPG" style="width:50%; height:auto; text-align:center;" />
+   	<div class="caption">  
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 3</strong>. 
+		Qualitative results of human pose retrieval.
+	</p>
+	</div>
+
+
+	<h3 id="subject" align="left">2. Qualitative Results of Room Layout Retrieval</h3>
+	<img src="images/qualitative_results_room.JPG" style="width:95%; height:auto; text-align:center;" />
+   	<div class="caption">  
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 4</strong>. 
+		Qualitative results of room layout retrieval. For an easier evaluation, the retrieved images are blended with their groundtruth
+		masks, and their mIoU scores are reported together. Binary Tri.: L(Triplet)+M(Binary). ImgNet: ImageNet pretraiend ResNet101.
+	</p>
+	</div>
+
+	<h3 id="subject" align="left">3. Qualitative Results of Caption-Aware Image Retrieval</h3>
+	<img src="images/qualitative_results_caption.JPG" style="width:95%; height:auto; text-align:center;" />
+   	<div class="caption">  
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 5</strong>. 
+		Qualitative results of caption-aware image retrieval. Binary Tri.: L(Triplet)+M(Binary). ImgNet: ImageNet pretraiend ResNet101.
+	</p>
+	</div>
+
+	<h3 id="subject" align="left">4. Attention Maps of Examples</h3>
+	<img src="images/attention_map.JPG" style="width:95%; height:auto; text-align:center;" />
+   	<div class="caption">  
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 6</strong>. 
+		Attention maps of typical examples of from reinforcement learned att2all2 model with ImageNet pretrained feature (Img RL),
+		caption aware feature(Cap RL)
+	</p>
+	</div>
+
+	</div>
+   </div>
+
+	<div id="cont">
+	<div class="wrap">        	
+	    	<h2 id="subject">Paper</h2>
+			<div class="paper-info-box" align="left">
+				<div class="paper-title-box">
+				Deep Metric Learning Beyond Binary Supervision
+				</div>
+				<div class="paper-author-box">
+					Sungyeon Kim, Minkyo Seo, Ivan Laptev, Minsu Cho and Suha Kwak
+				</div>
+				<div class="paper-info-box">
+				<em>CVPR</em>, 2019
+				</div>
+
+				[<a href="https://arxiv.org/abs/1904.09626" target="_blank">arXiv</a>]
+				[<a href="MS.bibtex" target="_blank">Bibtex</a>]
+
+				<p></p>
+			</div>
+			<div class="line"></div>
+    	</div>
+	</div>
+
+
+	<div id="cont">
+	<div class="wrap">        	
+	    	<h2 id="subject">Code</h2>
+			<p align="justify">
+				Check our GitHub repository: <a href="https://github.com/tjddus9597/Beyond-Binary-Supervision-CVPR19"><b>[github]</b></a>
+		    </p>
+	<div class="line"></div>
+	</div>
+	</div>
+
+
+<div id="footer">
+   <div class="nline2"></div>
+</div>
+</body>
+</html>

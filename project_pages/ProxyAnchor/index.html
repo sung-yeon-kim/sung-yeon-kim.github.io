@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="/lab/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/lab/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/lab/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/lab/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/lab/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/lab/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/lab/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/lab/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/lab/favicons/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-32x32.png" sizes="32x32">
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Deep Metric Learning" />
+	<meta name="keywords" content="ProxyAnchor Loss" />	
+	<meta name="author" content="Sungyeon Kim" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<title>Proxy Anchor Loss for Deep Metric Learning</title>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-63155504-4', 'auto');
+          ga('send', 'pageview');
+	  </script>
+	  <style>
+		  div {
+			  width: 100%;
+		}
+	  </style>
+</head>
+
+
+<body>
+	<div id="header">
+		<div class="wrap">
+			<div id="intro">
+				<h1 align="center" id="logo">
+					Proxy Anchor Loss for Deep Metric Learning
+				</h1>
+				<div align="center">
+					<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+						<tr>
+							<td width="20%" height="30" align='center'>
+								<a target="_blank" href="https://github.com/tjddus9597/" target="_blank">Sungyeon Kim</a>
+							</td>
+							<td width="20%" height="30" align='center'>
+								<a target="_blank" href="index.htmlo" target="_blank">Dongwon Kim</a>
+							</td>
+							<td width="20%" height="30" align='center'>
+								<a target="_blank" href="http://cvlab.postech.ac.kr/~suhakwak" target="_blank">Suha Kwak</a>
+							</td>
+							<td width="20%" height="30" align='center'>
+								<a target="_blank" href="http://cvlab.postech.ac.kr/~mcho" target="_blank">Minsu Cho</a>
+							</td>
+						</tr>
+						<tr>
+							<td height="30" colspan="4" align='center'>POSTECH</td>
+							<p align="center">
+							</p>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="nline1"></div>
+		</div>
+	</div>
+
+   <div id="cont">
+      <div class="wrap">        	
+         <h2 id="subject">Abstract</h1>
+         <p align="justify">
+Existing metric learning losses can be categorized into two classes: pair-based and proxy-based losses. The former class can leverage fine-grained semantic relations between
+data points, but slows convergence in general due to its high training complexity. In contrast, the latter class enables fast and reliable convergence, but cannot consider the rich datato-
+data relations. This paper presents a new proxy-based loss that takes advantages of both pair- and proxy-based methods and overcomes their limitations. Thanks to the use of proxies, our loss boosts the speed of convergence and is
+robust against noisy labels and outliers. At the same time, it allows embedding vectors of data to interact with each other through its gradients to exploit data-to-data relations. Our method is evaluated on four public benchmarks, where
+a standard network trained with our loss achieves state-ofthe-art performance and most quickly converges.
+</p>
+         <div class="line"></div>
+      </div>
+   </div>
+
+
+   <div id="cont">
+      <div class="wrap" align="center">
+         <h2 id="subject" align="left">Comparison Between Other Metric Learning Losses</h2>
+         <img src="images/Figure1.gif" style="width:90%;height:auto;text-align:center;"/>
+         <div class="caption">
+            <p class="caption-content">
+               <strong class="fig-label">Figure 1</strong>. 
+			   Comparison between popular metric learning losses and ours. Small nodes are embedding vectors of data in a batch, and black
+			   ones indicate proxies; their different shapes represent distinct classes. The associations defined by the losses are expressed by edges, and
+			   thicker edges get larger gradients. Also, embedding vectors associated with the anchor are colored in red if they are of the same class of the
+			   anchor (i.e., positive) and in blue otherwise (i.e., negative). (a) Triplet loss associates each anchor with a positive and a negative
+			   data point without considering their hardness. (b) N-pair loss and (c) Lifted Structure loss reflect hardness of data, but do not
+			   utilize all data in the batch. (d) Proxy-NCA loss cannot exploit data-to-data relations since it associates each data point only with
+			   proxies. (e) Our loss handles entire data in the batch, and associates them with each proxy with consideration of their relative hardness
+			   determined by data-to-data relations. See the text for more details.</p>
+         </div>
+			<div class="line"></div>
+      </div>
+   </div>      
+
+   <div id="cont">
+      <div class="wrap" align="center">
+         <h2 id="subject" align="left">Speed of Convergence</h2>
+         <img src="images/Figure2_graph.gif" style="width:70%;height:auto;text-align:center;"/>
+         <div class="caption">
+            <p class="caption-content">
+               <strong class="fig-label">Figure 2</strong>. 
+			   Accuracy in Recall@1 versus training time on the Cars-196 dataset. Note that all methods were trained with batch
+			   size of 150 on a single Titan Xp GPU. Our loss enables to achieve
+			   the highest accuracy, and converge faster than the baselines in
+			   terms of both the number of epochs and the actual training time.
+</p>
+         </div>
+			<div class="line"></div>
+      </div>
+   </div>  
+
+   <div id="cont">
+   <div class="wrap" align="center">
+	<h2 id="subject" align="left">Quantitative Results</h2>
+	<!-- <h3 id="subject" align="left">Comparison to state-of-the art methods</h3> -->
+	<img src="images/Table1.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 1</strong>.
+		Recall@K (%) on the CUB-200-2011 and Cars-196 datasets. Superscripts denote embedding sizes and <span>&#8224;</span> indicates models
+		using larger input images. Backbone networks of the models are denoted by abbreviations: G–GoogleNet, BN–Inception with batch
+		normalization, R50–ResNet50.
+
+	</div>
+	<img src="images/Table2.png" style="width:89%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 2</strong>.
+		Recall@K (%) on the SOP and In-Shop. Superscripts denote embedding sizes and <span>&#8224;</span> indicates models using larger input images.
+	</p>
+	</div>
+	</div>
+   </div>
+
+   <div id="cont">
+   <div class="wrap" align="center">
+	<h2 id="subject" align="left">Qualitative Results</h2>
+	<!-- <h3 id="subject" align="left">1. Qualitative results on Something-Something V1.</h3> -->
+	<img src="images/qualitative_results.png" style="width:55%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 3</strong>. 
+		Qualitative results on the CUB-200-2011 (a), Cars-196
+		(b), SOP (c) and In-shop (d). For each query image (leftmost), top-4 retrievals are presented. The results with red boundary are failure
+		cases, which are however substantially similar to their query
+		images in terms of appearance.
+	</p>
+	</div>
+	</div>
+   </div>
+
+	<div id="cont">
+	<div class="wrap">        	
+	    	<h2 id="subject">Paper</h2>
+			<div class="paper-info-box" align="left">
+				<div class="paper-title-box">
+				Proxy Anchor Loss for Deep Metric Learning
+				</div>
+				<div class="paper-author-box">
+					Sungyeon Kim, Dongwon Kim, Minsu Cho and Suha Kwak
+				</div>
+				<div class="paper-info-box">
+				<em>CVPR</em>, 2020
+				</div>
+
+				[<a href="https://arxiv.org/abs/2003.13911" target="_blank">arXiv</a>]
+				[<a href="MS.bibtex" target="_blank">Bibtex</a>]
+
+				<p></p>
+			</div>
+			<div class="line"></div>
+    	</div>
+	</div>
+
+
+	<div id="cont">
+	<div class="wrap">        	
+	    	<h2 id="subject">Code</h2>
+			<p align="justify">
+				Check our GitHub repository: <a href="https://github.com/tjddus9597/Proxy-Anchor-CVPR2020"><b>[github]</b></a>
+		    </p>
+	<div class="line"></div>
+	</div>
+	</div>
+
+
+<div id="footer">
+   <div class="nline2"></div>
+</div>
+</body>
+</html>

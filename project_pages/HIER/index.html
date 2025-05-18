@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="/lab/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/lab/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/lab/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/lab/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/lab/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/lab/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/lab/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/lab/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/lab/favicons/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/lab/favicons/favicon-32x32.png" sizes="32x32">
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Robust Fine-tuning" />
+	<meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble" />	
+	<meta name="author" content="Sungyeon Kim" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<title>Efficient and Versatile Robust Fine-Tuning of Zero-shot Models</title>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-63155504-4', 'auto');
+          ga('send', 'pageview');
+	  </script>
+	  <style>
+		  div {
+			  width: 100%;
+		}
+	  </style>
+</head>
+
+
+<body>
+
+	<div id="header">
+		<div class="wrap">
+		   <div id="intro">
+				<h1 align="center" id="logo">
+					Efficient and Versatile Robust Fine-Tuning of Zero-shot Models
+			  </h1>
+		  <div align="center">
+			 <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="20%" height="30" align='center'>
+						<font size="3"><a target="_blank" target="_blank" href="http://cvlab.postech.ac.kr/~sungyeon">Sungyeon Kim<sup> 1</sup></a></font>
+					</td>
+					<td width="20%" height="30" align='center'>
+						<font size="3"><a target="_blank" target="_blank" href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl">Boseung Jeong<sup> 1</sup></a></font>
+					</td>
+					<td width="20%" height="30" align='center'>
+						<font size="3"><a target="_blank" target="_blank" href="https://cs-people.bu.edu/donhk/">Donghyun Kim<sup> 2</sup></a></font>
+					</td>
+					<td width="20%" height="30" align='center'>
+						<font size="3"><a target="_blank" href="https://cvlab.postech.ac.kr/~suhakwak" target="_blank">Suha Kwak<sup> 1, 3</sup></a></font> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4"><br></td> <!-- 한 줄 띄우기 위한 빈 공간 -->
+				</tr>
+				<tr>
+				<td height="30" colspan="4" align='center'><font size="3"><sup>1 </sup>Department of Computer Science and Engineering, POSTECH, Korea</font></td>
+					<p align="center">
+				</p>
+				</tr>
+				<tr>
+					<td height="30" colspan="4" align='center'><font size="3"><sup>2 </sup>Department of Artificial Intelligence, Korea University, Korea</font></td>
+					<p align="center">
+				</p>
+				</tr>
+				<tr>
+					<td height="30" colspan="4" align='center'><font size="3"><sup>3 </sup>Graduate School of Artificial Intelligence, POSTECH, Korea</font></td>
+					<p align="center">
+				</p>
+				</tr>
+			 </table>
+		  </div>
+		   </div>
+	   <div class="nline1"></div>
+		</div>
+	 </div>
+
+
+	 <section class="hero">
+		<div class="hero-body">
+		  <div class="container">
+			<div class="columns is-centered">
+	
+					  <div class="column has-text-centered">
+						<div class="publication-links">
+							 <!-- Arxiv PDF link -->
+						  <span class="link-block">
+							<a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+							class="external-link button is-normal is-rounded is-dark">
+							<span class="icon">
+							  <i class="fas fa-file-pdf"></i>
+							</span>
+							<span>Paper</span>
+						  </a>
+						</span>
+	
+						<!-- Supplementary PDF link -->
+						<span class="link-block">
+						  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+						  class="external-link button is-normal is-rounded is-dark">
+						  <span class="icon">
+							<i class="fas fa-file-pdf"></i>
+						  </span>
+						  <span>Supplementary</span>
+						</a>
+					  </span>
+	
+					  <!-- Github link -->
+					  <span class="link-block">
+						<a href="https://github.com/skhcjh231/MATR_codebase" target="_blank"
+						class="external-link button is-normal is-rounded is-dark">
+						<span class="icon">
+						  <i class="fab fa-github"></i>
+						</span>
+						<span>Code</span>
+					  </a>
+					</span>
+	
+					<!-- ArXiv abstract Link -->
+					<span class="link-block">
+					  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+					  class="external-link button is-normal is-rounded is-dark">
+					  <span class="icon">
+						<i class="ai ai-arxiv"></i>
+					  </span>
+					  <span>arXiv</span>
+					</a>
+				  </span>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+<div id="cont">
+	<div class="wrap">        	
+		   <h2 id="subject">Abstract</h1>
+		   <p align="justify">
+			Large-scale image-text pre-trained models enable zero-shot classification and provide consistent accuracy across various data distributions. 
+			Nonetheless, optimizing these models in downstream tasks typically requires fine-tuning, which reduces generalization to out-ofdistribution (OOD) data and demands extensive computational resources. We introduce Robust Adapter (R-Adapter), a novel method for finetuning zero-shot models to downstream tasks while simultaneously addressing both these issues. Our method integrates lightweight modules
+			into the pre-trained model and employs novel self-ensemble techniques to boost OOD robustness and reduce storage expenses substantially. Furthermore, we propose MPM-NCE loss designed for fine-tuning on
+			vision-language downstream tasks. It ensures precise alignment of multiple image-text pairs and discriminative feature learning. By extending the benchmark for robust fine-tuning beyond classification to include diverse tasks such as cross-modal retrieval and open vocabulary segmentation, we demonstrate the broad applicability of R-Adapter. Our extensive
+			experiments demonstrate that R-Adapter achieves state-of-the-art performance across a diverse set of tasks, tuning only 13% of the parameters of the CLIP encoders.
+
+		  <div class="wrap" align="center">
+			   <img src="images/thumbnail.png" style="width:90%;height:auto;text-align:center;"/>
+			   <div class="caption">
+				  <p class="caption-content">
+				  <strong class="fig-label">Figure 1</strong>.
+				  We present Robust Adapter (R-Adapter), which combines the strengths of robust fine-tuning and parameter-efficient fine-tuning (PEFT). R-Adapter improves 
+				parameter and memory efficiency compared to existing robust fine-tuning (e.g., Maskfill, ModelSoup) while being more robust compared to existing PEFT (e.g.,
+				AdaptFormer, MaPLe). Unlike most of existing robust fine-tuning, our method
+				can apply to a wide range of tasks, and consistently outperforms current best methods
+				on diverse tasks in both in-distribution (ID) and out-of-distribution (OOD).
+				   </p>
+			   </div>
+		  </div>
+		  
+		  </p>
+	   <div class="line"></div>
+	</div>
+ </div>
+
+ <div id="cont">
+	<div class="wrap" align="center">
+	   <h2 id="subject" align="left">An overview of R-Adapter</h2>
+	   <img src="images/figure2.png" style="width:90%;height:auto;text-align:center;"/>
+	   <div class="caption">
+		  <p class="caption-content">
+			 <strong class="fig-label">Figure 2</strong>. 
+			 Each adapter is positioned after MHA and FFN
+			 layers. R-Adapter stochastically drops the adapters during training. Also, the weights of
+			 the adapters are accumulated using an exponential moving average during the training.
+			 At the evaluation, these weights are re-scaled by &alpha; and then re-parametrized to be
+			 integrated into their prior layers, resulting in a weight-space ensemble between the
+			 pre-trained layers and the re-parametrized layer without re-scaling.
+		  </p>
+	   </div>
+   <div class="line"></div>
+	</div>
+ </div>      
+
+
+
+
+	<div id="cont">
+	<div class="wrap" align="center">
+	<h2 id="subject" align="left">Experimental results</h2>
+
+	<h3 id="subject" align="left">1. ImageNet classification inder distribution shifts</h3>
+	<img src="images/quantitative_results.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 1</strong>.
+		Top-1 accuracy of models with different robust fine-tuning on ImageNet (ID)
+		and OOD datasets. “OOD avg” is the average accuracy across the five OOD datasets.
+		Entries in green indicate fewer parameters than full fine-tuning, and red use more.
+	</div>
+
+	<h3 id="subject" align="left">2. Few-shot ImageNet classification</h3>
+	<img src="images/quantitative_results2.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 2</strong>.
+		Top-1 accuracy for adapting CLIP to 16-shot ImageNet classification on ID
+		and OOD datasets. OOD avg is the average accuracy across the four OOD datasets.
+		“r-Rank” denotes our models with adapters employing low-rank decomposition while
+		“Full-Rank” is no decomposition. All methods adopt CLIP ViT-B/16 as the backbone.
+	</div>
+
+	<h3 id="subject" align="left">3. Cross-modal retrieval</h3>
+	<img src="images/quantitative_results3.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 3</strong>.
+		Cross-modal retrieval performance on the COCO (5K test set) and Flickr30K
+		datasets in Recall at K (R@K). B and L denote the use of 12-layer and 24-layer transformer encoders, respectively. FLYPL training has failed due to memory constraints.
+	</div>
+
+	<h3 id="subject" align="left">4. Open-vocabulary segmentation</h3>
+	<img src="images/quantitative_results4.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 4</strong>.
+		Comparison of mIoU results between the OVSeg fine-tuned with our method
+		and existing open-vocabulary segmentation models. Note that OVSeg (Org.) is trained
+		in two stages, starting with full CLIP model fine-tuning followed by mask prompt
+		tuning, whereas OVSeg (Ours) involves single-stage adapter training.
+	</div>
+
+	<div id="cont">
+		<div class="wrap" align="center">
+		<h2 id="subject" align="left">Ablation studies</h2>
+
+	<h3 id="subject" align="left">1. Effectiveness of key components</h3>
+	<img src="images/ablation1.png" style="width:85%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Table 5</strong>.
+		Ablation study on key components of our method and comparison with the
+		other adapter-tuning methods using full-rank structure. The experiments are performed
+		on the ImageNet classification with ViT-B/32. The last row (E10) corresponds to our
+		default configuration. DO: Dropout in Adapters. DP: Drop-path in pre-trained layers.
+		AD: Adapter Dropping. AC: Accumulation. RS: Re-scaling. LS: Label Smoothing.
+	</div>
+
+	<h3 id="subject" align="left">2. Re-scaling coefficient</h3>
+	<img src="images/coeff_variation.png" style="width:75%; height:auto; text-align:center;" />
+   	<div class="caption">
+    	<p class="caption-content">
+		<strong class="fig-label">Figure 3</strong>.
+		Performance of our method varying re-scaling coefficient &alpha; against WiSE-FT.
+	</div>
+
+
+	<div id="cont">
+		<div class="wrap">        	
+			<h2 id="subject" align="left">Acknowledgements</h2>
+				<p align="justify">
+					This work was supported by NRF grants (NRF-2021R1A2C3012728–30%, NRF2018R1A5A1060031–30%, RS-2024-00341514–25%) and IITP grants (RS-2019II191906–10%, Artificial Intelligence Graduate School Program - POSTECH,
+					RS-2019-II190079–5%, Artificial Intelligence Graduate School Program - Korea University) funded by Ministry of Science and ICT, Korea.
+				</p>
+		<div class="line"></div>
+		</div>
+		</div>
+
+	<div id="cont">
+		<div class="wrap" align="center">    	
+	    	<h2 id="subject" align="left">Paper</h2>
+			<div class="paper-info-box" align="left">
+				<div class="paper-title-box">
+				Efficient and Versatile Robust Fine-Tuning of Zero-shot Models
+				</div>
+				<div class="paper-author-box">
+					Sungyeon Kim, Boseung Jeong, Donghyun Kim and Suha Kwak
+				</div>
+				<div class="paper-info-box">
+				<em>ECCV</em>, 2024
+				</div>
+
+				[<a href="https://www.arxiv.org/pdf/2408.05749" target="_blank">arXiv</a>]
+				[<a href="MS.bibtex" target="_blank">Bibtex</a>]
+
+				<p></p>
+			</div>
+			<div class="line"></div>
+    	</div>
+	</div>
+
+
+	<div id="cont">
+	<div class="wrap">        	
+		<h2 id="subject" align="left">Code</h2>
+			<p align="justify">
+				Check our GitHub repository: <a href="https://github.com/tjddus9597/HIER-CVPR23"><b>[github]</b></a>
+		    </p>
+	<div class="line"></div>
+	</div>
+	</div>
+
+	<div id="cont">
+		<div class="wrap">
+			<h2 id="subject" align="left">Reference</h2>
+			<p align="justify" style="font-size:14px;">
+				[1] Sungyeon Kim, Dongwon Kim, Minsu Cho, and Suha Kwak.
+				Proxy anchor loss for deep metric learning. In Proc. IEEE
+				Conference on Computer Vision and Pattern Recognition
+				(CVPR), 2020.
+			</p>
+			<p align="justify" style="font-size:14px;">
+				[2] Xun Wang, Xintong Han, Weilin Huang, Dengke Dong, and
+				Matthew R Scott. Multi-similarity loss with general pair
+				weighting for deep metric learning. In Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR),
+				2019.
+			</p>
+
+			<p align="justify" style="font-size:14px;">
+				[3] Aleksandr Ermolov, Leyla Mirvakhabova, Valentin
+				Khrulkov, Nicu Sebe, and Ivan Oseledets. Hyperbolic
+				vision transformers: Combining improvements in metric
+				learning. In Proc. IEEE Conference on Computer Vision
+				and Pattern Recognition (CVPR), 2022.
+			</p>
+		</div>
+
+
+<div id="footer">
+   <div class="nline2"></div>
+</div>
+</body>
+</html>
