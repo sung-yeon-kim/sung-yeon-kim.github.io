@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Sungyeon Kim</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://kit.fontawesome.com/063dba501b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles_backup.css" rel="stylesheet" />
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" type="text/css" />
+
+        <style>
+            .fixed-width {
+                display: inline-block;
+                width: 110px; /* Adjust width as needed */
+                text-align: left; /* Align text to the right */
+                font-family: "Courier New"; /* Modern fixed-width fonts */
+            }
+        </style>
+        
+
+    </head>
+    <body id="page-top">
+
+
+        <!-- Dark Mode Toggle Button -->
+        <!-- <button id="dark-mode-toggle" class="btn btn-light" style="position: fixed; top: 20px; right: 20px; z-index: 1000;"> -->
+            <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+
+                <button id="dark-mode-toggle" class="btn btn-light ml-2">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        -->
+        <style>
+            :root {
+                --current: #33BBFF; /* 기본 색상 */
+                --dark: #212529;
+                --transition-speed: 0.8s;
+            }
+        
+            body {
+                transition: background-color var(--transition-speed), color var(--transition-speed);
+            }
+        
+            body.light-mode {
+                --current: #015c89; /* 라이트 모드에서 변경할 색상 */
+                --dark: #ffffff;
+                background-color: #ffffff;
+                color: #000000;
+            }
+        
+            .light-mode .bg-primary {
+                background-color: var(--current) !important;
+            }
+            .light-mode .text-primary {
+                color: var(--current) !important;
+            }
+            .light-mode .navbar {
+                background-color: #ffffff;
+            }
+            .light-mode .sidebar {
+                background-color: #002147 !important;
+            }
+            .light-mode h1, .light-mode h2, .light-mode h3, 
+            .light-mode h4, .light-mode h5, .light-mode h6 {
+                color: #000000 !important;
+            }
+            .light-mode b {
+                color: #000000;
+            }
+            .light-mode .btn-outline-primary {
+                color: #000000 !important;
+                border-color: #000000;
+                background-color: #ffffff;
+                transition: background-color var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
+            }
+            .light-mode .btn-outline-primary:hover {
+                color: #ffffff !important;
+                background-color: var(--current);
+                border-color: #000000;
+            }
+            .light-mode .btn-outline-primary i {
+                color: #000000 !important;
+            }
+            .light-mode .btn-outline-primary span {
+                color: #000000 !important;
+            }
+            .light-mode .social-icons a {
+                color: var(--current) !important;
+            }
+            .light-mode .timeline-item h5.item-period {
+                border-color: var(--current) !important;
+                color: #ffffff;
+            }
+        
+            .light-mode h2:before, h2:after {
+                color: var(--current) !important;
+            }
+        
+            /* 다크 모드 토글 버튼 스타일 */
+            #dark-mode-toggle {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: none;
+                border: none;
+                color: inherit;
+                font-size: 1.5rem;
+            }
+
+            /* 데스크톱 화면에서만 테두리 추가 */
+            @media screen and (min-width: 768px) {
+                #dark-mode-toggle {
+                    border: 2px solid var(--current); /* 테두리 색상을 --current 변수로 설정 */
+                    border-radius: 50%; /* 원형 테두리 */
+                    padding: 10px; /* 내부 여백 */
+                }
+            }
+        
+            /* 모바일 모드에서의 스타일 */
+            @media screen and (max-width: 768px) {
+                #dark-mode-toggle {
+                    position: static; /* 고정 위치 해제 */
+                    margin-left: 130px; /* 햄버거 버튼과의 간격 조정 */
+                    background: none;
+                    border: none;
+                    color: inherit;
+                    font-size: 1.5rem;
+                    padding: 0;
+                }
+        
+                .navbar-toggler {
+                    margin-left: auto; /* 햄버거 버튼을 오른쪽으로 정렬 */
+                }
+            }
+
+            
+        </style>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggleButton = document.getElementById("dark-mode-toggle");
+                const body = document.body;
+                const lightModeEnabled = localStorage.getItem("light-mode") === "enabled";
+        
+                if (!lightModeEnabled) {
+                    body.classList.add("dark-mode");
+                    toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    body.classList.add("light-mode");
+                    toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+        
+                toggleButton.addEventListener("click", function (event) {
+                    event.preventDefault(); // 기본 동작 방지
+                    body.style.transition = "background-color var(--transition-speed), color var(--transition-speed)";
+                    body.classList.toggle("light-mode");
+                    body.classList.toggle("dark-mode");
+        
+                    if (body.classList.contains("light-mode")) {
+                        localStorage.setItem("light-mode", "enabled");
+                        toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+                    } else {
+                        localStorage.setItem("light-mode", "disabled");
+                        toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+                    }
+                });
+            });
+        </script>
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                <span class="d-block d-lg-none">Sungyeon Kim</span>
+                <span class="d-none d-lg-block">
+                    <img class="img-fluid img-profile rounded-circle mx-auto mb-3" src="assets/img/profile2.png" alt="" />
+                </span>
+            </a>
+            <!-- 다크 모드 토글 버튼 -->
+            <button id="dark-mode-toggle" class="btn btn-light">
+                <i class="fas fa-moon"></i>
+            </button>
+            <!-- 햄버거 메뉴 버튼 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <div class="social-icons">
+                        <li>
+                            <a class="social-icon" href="https://github.com/tjddus9597/"><i class="fab fa-github"></i></a>
+                            <a class="social-icon" href="https://scholar.google.com/citations?hl=ko&user=05Ff7hcAAAAJ"><i class="fab fa-google"></i></a>
+                            <a class="social-icon" href="https://www.linkedin.com/in/sungyeonkim-b47b0a242/"><i class="fab fa-linkedin"></i></a>
+                            <a class="social-icon" href="Sungyeon_CV.pdf"><i class="fa-solid fa-address-card"></i></a>
+                        </li>
+                    </div>
+                    <br>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#publications">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards & Honors</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#service">Academic Services</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+    
+
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            
+            <!-- About-->
+            <section class="resume-section" id="about">
+                <div class="resume-section-content">
+                    <h1 class="name font-weight-bold mb-1">Sungyeon <l>Kim</l></h1>
+                    <div class="lead tagline mb-3">Ph.D. @ Computer Vison LAB in POSTECH.</div>
+                    <!-- <p class="lead mb-1">
+                        Ph.D. Candiate @ Computer Vison LAB in POSTECH.
+                    </p> -->
+                    <!-- <p class="mb-4"> ☎️ &nbsp (+82) 10-5408-3407 &nbsp | &nbsp
+                        <i class="fa-solid fa-envelope"></i> &nbsp <a href="mailto:sungyeon.kim@postech.ac.kr">sungyeon.kim@postech.ac.kr</a> </p> -->
+                        <p class="mb-4"> <i class="fa-solid fa-envelope"></i> &nbsp <a href="mailto:sungyeon.kim@postech.ac.kr">sungyeon.kim@postech.ac.kr</a> </p>
+                    <p class="mb-5"> I am currently a postdoctoral researcher at the <a  href="http://cvlab.postech.ac.kr/"> Computer Vision Lab </a> at POSTECH (Pohang University of Science and Technology). 
+                        I will join <a  href="https://www.amazon.com/visual-search/"> Amazon Visual Search Team </a> as an Applied Research Scientist starting in July 2025. I received Ph.D. at <a  href="http://cse.postech.ac.kr/"> Computer Science and Engineering</a>, POSTECH under the supervision of Prof. <a href="http://cvlab.postech.ac.kr/~suhakwak/">Suha Kwak</a>.
+                        <!-- I am a Ph.D. in the <a  href="http://cse.postech.ac.kr/"> Computer Science and Engineering </a> 
+                        at <a  href="http://www.postech.ac.kr/"> POSTECH</a>. I am a member of the 
+                        <a  href="http://cvlab.postech.ac.kr/"> Computer Vision Lab </a> at POSTECH, under supervision of Professor 
+                        <a href="http://cvlab.postech.ac.kr/~suhakwak/">Suha Kwak</a>. -->
+                        My research focuses on deep metric learning, representation learning, retrieval, and their applications. </p> 
+                        
+                    <!-- <div class="social-icons>
+                        <a class="social-icon" href="https://github.com/tjddus9597/"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="https://scholar.google.com/citations?hl=ko&user=05Ff7hcAAAAJ"><i class="fab fa-google"></i></a>
+                        <a class="social-icon" href="https://www.linkedin.com/in/sungyeonkim-b47b0a242/"><i class="fab fa-linkedin"></i></a>
+                        <a class="social-icon" href="sungyeon_CV.pdf"><i class="fa-solid fa-address-card"></i></a>
+                    </div> </p> -->
+                    
+                    <br><br>
+
+                    <div class="block-title">
+                        <h2>News </h2>
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <span class="fixed-width">[Mar, 2025]</span>  📄 Two papers are accepted in <a href="https://cvpr.thecvf.com//">CVPR 2025</a>.  <br>
+                        <span class="fixed-width">[Feb, 2025]</span>  🎉 I will join Amazon Visual Search Team as an Applied Research Scientist. <br>
+                        <span class="fixed-width">[Feb, 2025]</span>  🎉 I graduated as a recipient of <a href="https://times.postech.ac.kr/news/articleView.html?idxno=23477">Alumni Award</a> at POSTECH.<br>
+                        <span class="fixed-width">[Dec, 2024]</span>  🎓 I successfully completed my Ph.D. defense! <br>
+                        <span class="fixed-width">[Dec, 2024]</span>  🎉 I won the <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-south-korea">Qualcomm Innovation Fellowship 2024 Korea program</a>.<br>
+                        <span class="fixed-width">[Oct, 2024]</span>  📄 A paper on metric learning is accepted in <a href="https://wacv2025.thecvf.com/">WACV 2025</a>.<br>
+                        <span class="fixed-width">[Jul, 2024]</span>  📄 Two papers are accepted in <a href="https://eccv.ecva.net/">ECCV 2024</a>.
+                    </div>
+
+                    <!-- <div class="flex-grow-1">
+                        [Feb, 2025] &emsp; 🎉 I will join Amazon Visual Search Team as an Applied Research Scientist. <br>
+                        [Feb, 2025] &emsp; 🎉 I graduated as a recipient of <a  href="https://times.postech.ac.kr/news/articleView.html?idxno=23477"> Alumni Award </a> at POSTECH.<br>
+                        [Dec, 2024] &emsp; 🎓 I successfully completed my Ph.D. defense! <br>
+                        [Dec, 2024] &emsp; 🎉 I won the <a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2024-south-korea">Qualcomm Innovation Fellowship 2024 Korea program</a>.<br>
+                        [Oct, 2024] &emsp; 📄 A paper on metric learning is accepted in <a href="https://wacv2025.thecvf.com/">WACV 2025</a>.<br>
+                        [Jul, 2024] &emsp; 📄 Two papers are accepted in <a href="https://eccv.ecva.net/">ECCV 2024</a>.<br>
+                        2023. 06 &emsp; 📄 A paper on domain generalization is accepted in <a href="https://iccv2023.thecvf.com/">ICCV 2023</a>.<br>
+                        2023. 06 &emsp; 🎉 I won the <a  href="https://research.google/outreach/phd-fellowship/recipients/">Google PhD fellowship program 2023</a>.<br>
+                        2023. 04 &emsp; ⭐ <a  href="https://github.com/tjddus9597/HIER-CVPR23"> Code </a> for HIER: Metric Learning Beyond Class Labels
+                            via Hierarchical Regularization is released.<br>
+                        2023. 02 &emsp; 📄 A paper about <a  href="https://arxiv.org/pdf/2212.14258.pdf"> hierarchical regularization for metric learning </a> is accepted at <a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>.<br>
+                    </div> -->
+
+                </div>
+            </section>
+            <hr class="m-0" />
+            
+            <!-- Publications -->           
+            <section class="resume-section" id="publications">
+                <div class="resume-section-content">
+                    <div class="block-title">
+                        <h2 class="mb-5"> Publications </h2>
+                    </div>
+
+
+                    <!-- <h3  class="mb-3"><font size=5> Preprints <br> </h3> </font> -->
+
+                    <h3  class="mb-3"><font size=5>Conference Papers <br> </h3> </font>
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/cvpr_25_genius.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>GENIUS: A Generative Framework for Universal Multimodal Search </h4>
+                                <p class="lead"><font size=3> <u><b>Sungyeon Kim</b></u>, Xinliang Zhu, Xiaofan Lin, Muhammet Bastan, Douglas Gray, Suha Kwak <br>
+                                    <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 </I> <br> </font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2503.19868" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a> -->
+                                <!-- <a href="https://promptstyler.github.io/#BibTeX" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                <!-- </a> -->
+                                <a href="publications/bibtex/cvpr_25_genius.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40px"></div>
+
+                        <div class="resume-section-content">
+                            <div class="row">
+                                <div class="d-none d-lg-block col-lg-2">
+                                    <a class="thumbnail">
+                                      <img src="publications/thumbnails/cvpr25_video.png">
+                                    </a>
+                                  </div>
+                                <div class="col-lg-8">
+                                    <h4>Learning Audio-guided Video Representation with Gated Attention for Video-Text Retrieval </h4>
+                                    <p class="lead"><font size=3> Boseung Jeong, Jicheol Park, <u><b>Sungyeon Kim</b></u>, Suha Kwak  <br>
+                                        <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025 </I> <br> </font>
+                                        <b class="text-primary">Oral Presentation (3.3% acceptance rate) </b></font>
+                                    </p>
+                                    <a href="https://www.arxiv.org/abs/2504.02397" target="_blank" class="btn btn-outline-primary" role="button">
+                                        <i class="fas fa-file-alt"></i> Paper
+                                     </a>
+                                    <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                        <i class="fab fa-github"></i> Code
+                                    </a> -->
+                                    <!-- <a href="https://promptstyler.github.io/#BibTeX" target="_blank" class="btn btn-outline-primary" role="button">
+                                        <i class="fas fa-briefcase"></i> Project Page
+                                    <!-- </a> -->
+                                    <a href="publications/bibtex/cvpr_25_video.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                        <i class="fas fa-book-open"></i> Bibtex
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row" style="height: 40px"></div>
+
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/kim2023universal.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>Learning Unified Distance Metric Across Diverse Data Distributions <br> with Parameter-Efficient Transfer Learning </h4>
+                                <p class="lead"><font size=3> <u><b>Sungyeon Kim</b></u>, Donghyun Kim, Suha Kwak<br>
+                                    <I> IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2025 </I> <br> </font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2309.08944.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a> -->
+                                <!-- <a href="https://promptstyler.github.io/#BibTeX" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                <!-- </a> -->
+                                <a href="publications/bibtex/wacv_25.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40px"></div>
+
+
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/eccv2024_radapter.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>Efficient and Versatile Robust Fine-Tuning of Zero-shot Models </h4>
+                                <p class="lead"><font size=3> <u><b>Sungyeon Kim</b></u>, Boseung Jeong, Donghyun Kim, Suha Kwak<br>
+                                    <I> European Conference on Computer Vision (ECCV) </I>, 2024<br> </font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2408.05749" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a> -->
+                                <a href="https://cvlab.postech.ac.kr/research/R-Adapter/" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                </a>
+                                <a href="publications/bibtex/eccv_24.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 50px"></div>
+                        <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/eccv2024_frest.png">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>FREST: Feature RESToration for Semantic Segmentation under Multiple Adverse Conditions </h4>
+                            <p class="lead"><font size=3> Sohyun Lee, Namyup Kim, <u><b>Sungyeon Kim</b></u>, Suha Kwak<br>
+                                <I> European Conference on Computer Vision (ECCV) </I>, 2024<br> </font>
+                            </p>
+                            <a href="https://arxiv.org/abs/2407.13437" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-file-alt"></i> Paper
+                             </a>
+                            <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fab fa-github"></i> Code
+                            </a> -->
+                            <a href="https://sohyun-l.github.io/frest/" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-briefcase"></i> Project Page
+                            </a>
+                            <a href="publications/bibtex/eccv_24.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 50px"></div>
+
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/iccv2023_promptstyler.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>PromptStyler: Prompt-driven Style Generation for Source-free Domain Generalization </h4>
+                                <p class="lead"><font size=3> Junhyeong Cho, Gilhyun Nam, <u><b>Sungyeon Kim</b></u>, Hunmin Yang, Suha Kwak<br>
+                                    <I> International Conference on Computer Vision (ICCV)</I>, 2023<br> </font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2307.15199.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                <!-- <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a> -->
+                                <a href="https://promptstyler.github.io" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                </a>
+                                <a href="publications/bibtex/iccv_23.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 50px"></div>
+
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/cvpr2023_hier.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>HIER: Metric Learning Beyond Class Labels via Hierarchical Regularization </h4>
+                                <p class="lead"><font size=3> <u><b>Sungyeon Kim</b></u>, Boseung Jeong, Suha Kwak<br>
+                                    <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</I>, 2023<br>
+                                    <b class="text-primary">Qualcomm Innovation Fellowship Finalist </b></font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2212.14258.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                <a href="https://github.com/tjddus9597/HIER-CVPR23" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                <a href="http://cvlab.postech.ac.kr/research/HIER/" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                </a>
+                                <a href="publications/bibtex/cvpr_23.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40px"></div>
+                    
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/eccv2022x.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>Cross-Domain Ensemble Distillation for Domain Generalization </h4>
+                                <p class="lead"><font size=3> Kyungmoon Lee, <u><b>Sungyeon Kim</b></u>, Suha Kwak<br>
+                                <I> European Conference on Computer Vision (ECCV)</I>, 2022<br></font>
+                                </p>
+                                <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136850001.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                 </a>
+                                </a>
+                                <a href="https://github.com/leekyungmoon/XDED" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                </a>
+                                <a href="publications/bibtex/eccv_22_cross.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40px"></div>
+
+                    <div class="resume-section-content">
+                        <div class="row">
+                            <div class="d-none d-lg-block col-lg-2">
+                                <a class="thumbnail">
+                                  <img src="publications/thumbnails/eccv2022l.png">
+                                </a>
+                              </div>
+                            <div class="col-lg-8">
+                                <h4>Combating Label Distribution Shift for Active Domain Adaptation </h4>
+                                <p class="lead"><font size=3> Sehyun Hwang, Sohyun Lee, <u><b>Sungyeon Kim</b></u>, Jungseul Ok, Suha Kwak<br>
+                                <I> European Conference on Computer Vision (ECCV)</I>, 2022<br>
+                                <b class="text-primary">IPIU Best Paper Award, BK21 Best Paper Award, Qualcomm Innovation Fellowship Winner </b></font>
+                                </p>
+                                <a href="https://arxiv.org/abs/2208.06604" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-file-alt"></i> Paper
+                                </a>
+                                <a href="https://github.com/sehyun03/ADA-label-distribution-matching" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                </a>
+                                <!-- <a href="http://cvlab.postech.ac.kr/research/STML/" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-briefcase"></i> Project Page
+                                </a> -->
+                                <a href="publications/bibtex/eccv_22_active.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                    <i class="fas fa-book-open"></i> Bibtex
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40px"></div>
+
+                    <div class="resume-section-content">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/cvpr2022_stml.png">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>Self-Taught Metric Learning without Labels </h4>
+                            <p class="lead"><font size=3><u><b>Sungyeon Kim</b></u>, Dongwon Kim, Minsu Cho, Suha Kwak<br>
+                            <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</I>, 2022<br>
+                            <b class="text-primary">BK21 Best Paper Award, Qualcomm Innovation Fellowship Winner </b></font>
+                            </p>
+                            <a href="http://arxiv.org/abs/2205.01903" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-file-alt"></i> Paper
+                            </a>
+                            <a href="https://github.com/tjddus9597/STML-CVPR22" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="http://cvlab.postech.ac.kr/research/STML/" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-briefcase"></i> Project Page
+                            </a>
+                            <a href="publications/bibtex/cvpr_22.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 40px"></div>
+
+                    <div class="resume-section-content">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/bmvc2021.png">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>Learning to Generate Novel Classes for Deep Metric Learning </h4>
+                            <p class="lead"><font size=3> Kyungmoon Lee, <u><b>Sungyeon Kim</b></u>, Seunghoon Hong, Suha Kwak <br>
+                                <I> British Machine Vision Conference (BMVC)</I>, 2021 <br></font>
+                            </p>
+                             <a href="https://www.bmvc2021-virtualconference.com/assets/papers/0631.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                               <i class="fas fa-file-alt"></i> Paper
+                            </a>
+                            <a href="publications/bibtex/bmvc_21.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 40px"></div>
+                    
+                    <div class="resume-section-content">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/cvpr2021.png">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>Embedding Transfer with Label Relaxation for Improved Metric Learning</h4>
+                            <p class="lead"><font size=3><u><b>Sungyeon Kim</b></u>, Dongwon Kim, Minsu Cho, Suha Kwak<br>
+                            <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</I>, 2021<br>
+                            <b class="text-primary">BK21 Best Paper Award, IPIU Best Paper Award Winner </b></font>
+                            </p>
+                             <a href="https://arxiv.org/abs/2103.14908v1.pdf" target="_blank" class="btn btn-outline-primary" role="button">
+                               <i class="fas fa-file-alt"></i> Paper
+                            </a>
+                            <a href="https://github.com/tjddus9597/LabelRelaxation-CVPR21" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="http://cvlab.postech.ac.kr/research/EmbeddingTransfer/" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-briefcase"></i> Project Page
+                            </a>
+                            <a href="publications/bibtex/cvpr_21.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 40px"></div>
+                        
+                    <div class="resume-section-content">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/cvpr_20.gif">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>Proxy Anchor Loss for Deep Metric Learning</h4>
+                            <p class="lead"><font size=3><u><b>Sungyeon Kim</b></u>, Dongwon Kim, Minsu Cho, Suha Kwak<br>
+                            <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</I>, 2020<br></font>
+                            </p>
+                            <a href="https://arxiv.org/abs/2003.13911" target="_blank" class="btn btn-outline-primary" role="button">
+                               <i class="fas fa-file-alt"></i> Paper
+                            </a>
+                            <a href="https://github.com/tjddus9597/Proxy-Anchor-CVPR2020" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="http://cvlab.postech.ac.kr/research/ProxyAnchor/" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-briefcase"></i> Project Page
+                            </a>
+                            <a href="publications/bibtex/cvpr_20.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 40px"></div>
+                                            
+                    <div class="resume-section-content">
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-2">
+                            <a class="thumbnail">
+                              <img src="publications/thumbnails/cvpr2019m.png">
+                            </a>
+                          </div>
+                        <div class="col-lg-8">
+                            <h4>Deep Metric Learning Beyond Binary Supervision</h4>
+                            <p class="lead"><font size=3><u><b>Sungyeon Kim</b></u>, Minkyo Seo, Ivan Laptev, Minsu Cho, Suha Kwak<br>
+                            <I> IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</I>, 2019<br>
+                            <b class="text-primary">Oral Presentation (5.6% acceptance rate), Qualcomm Innovation Fellowship Winner </b></font>
+                            </p>
+                            <a href="https://arxiv.org/abs/1904.09626" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-file-alt"></i> Paper
+                            </a>
+                            <a href="https://github.com/tjddus9597/Beyond-Binary-Supervision-CVPR19" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="http://cvlab.postech.ac.kr/research/BeyondBinary/" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-briefcase"></i> Project Page
+                            </a>
+                            <a href="publications/bibtex/cvpr_19.html" target="_blank" class="btn btn-outline-primary" role="button">
+                                <i class="fas fa-book-open"></i> Bibtex
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <div class="block-title">
+                        <h2 class="mb-5"> Education </h2>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Computer Vision Lab, POSTECH (Pohang University of Science and Technology)</h3>
+                            <div class="lead mb-3">Ph.D at Computer Science and Engineering</div>
+                            <li> Advised by Prof. Suha Kwak.</li>
+                            <li> Recipient of the Alumni Award.</li>
+                            <li> Dissertation: Towards Retrieval at Scale via Compact Embeddings and Generative Modeling</li>
+                            <li> Committee: 
+                                <a  href="https://suhakwak.github.io/">Prof. Suha Kwak</a>, 
+                                <a  href="https://cvlab.postech.ac.kr/~mcho/">Prof. Minsu Cho</a>, 
+                                <a  href="https://cg.postech.ac.kr/leesy/">Prof. Seungyong Lee</a>, 
+                                <a  href="https://sites.google.com/view/jungseulok">Prof. Jungseul Ok</a>, 
+                                and <a  href="https://cv.snu.ac.kr/index.php/bhhan/">Prof. Bohyung Han</a> 
+                            </li>
+
+                            <!-- <li class="bigger">GPA: 3.92/4.3</li> -->
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Pohang, S.Korea </span> <br> Sep. 2018 - Feb. 2025</div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">DGIST (Daegu Gyeongbuk Institute of Science and Technology)</h3>
+                            <div class="lead mb-3">B.S at Undergraduate Studies</div>
+                            <!-- <li class="bigger">GPA: 3.65/4.3</li> -->
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Daegu, S.Korea </span> <br> Mar. 2014 - Feb. 2018</div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+            
+            
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <div class="block-title">
+                        <h2 class="mb-5"> Experience </h2>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Applied Scientist Intern, Amazon</h3>
+                            <div class="lead mb-3">Research Intern</div>
+                            <li> Research with <a href="https://www.linkedin.com/in/xinliang-zhu-6b589942/">Xinliang Zhu</a>. </li>
+                            <li> Researched on generative multimodal retrieval framework. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Palo Alto, CA </span> <br> Jun. 2024 - Sep. 2024</div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">MIT-IBM Watson AI Lab</h3>
+                            <div class="lead mb-3">Research Collaboration</div>
+                            <li> Research with <a href="https://cs-people.bu.edu/donhk/">Donghyun Kim</a>. </li>
+                            <li> Researched on parameter-efficient learning and deep metric learning. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Cambridge, MA (Remote)</span> <br> Dec. 2022 - Sep. 2023</div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Vision Team, Naver</h3>
+                            <div class="lead mb-3">Research Intern</div>
+                            <li> Research with <a href="https://geonm.github.io/">Geonmo Gu</a>, <a href="https://sites.google.com/view/byungsooko">Byungsoo Ko</a>. </li>
+                            <li> Researched on self-supervised learning. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Seongnam, S.Korea (Remote)</span> <br> Apr. 2022 - Jul. 2022</div>
+                    </div>
+                    <!-- <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Computer Vision Lab, POSTECH</h3>
+                            <div class="lead mb-3">Research Assistant</div>
+                            <li> Advised by Prof. <a href="http://cvlab.postech.ac.kr/~suhakwak/">Suha Kwak</a>. </li>
+                            <li> Researched on deep metric learning. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Pohang, S.Korea </span> <br> Apr. 2018 - Aug. 2018</div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Vision and Learning Group, DGIST</h3>
+                            <div class="lead mb-3">Undergraduate Intern</div>
+                            <li> Advised by Prof. <a href="http://cvlab.postech.ac.kr/~suhakwak/">Suha Kwak</a>. </li>
+                            <li> Researched on deep metric learning and pose estimation. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Daegu, S.Korea </span> <br> Dec. 2016 - Jan. 2018 </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Future Automotive Technology Research Center, DGIST</h3>
+                            <div class="lead mb-3">Undergraduate Intern</div>
+                            <li> Advised by Wooyoung Jung</a>. </li>
+                            <li> Researched on pedestrian detection in video for autonomous vehicles. </li>
+                            <li> Implemented API for pedestrian detection utilizing PyCaffe and PyQt. </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Daegu, S.Korea </span> <br> Jun. 2016 - Aug. 2016 </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Communication and Signal Processing Lab, DGIST</h3>
+                            <div class="lead mb-3">Undergraduate Intern</div>
+                            <li> Advised by Prof. <a href="https://sites.google.com/view/dgistcsp/">Ji-Woong Choi</a>. </li>
+                            <li> Researched on Muscle-computer connection systems and signal processing. </li>
+                            <li> Developed Electromyography (EMG) signal processing tool to reduce signal noise. </li>
+                            <li> Patented for rehabilitation program using measured EMG signals. 
+                                <li> <b><a  href="https://patents.google.com/patent/KR101648638B1/en"> KR101648638B1</a></b>, Rehabilitation program creation 
+                                    method for muscle treatment and <br> &nbsp &nbsp &nbsp rehabilitation program providing apparatus for performing the method
+                                </li>
+                            </li>
+                        </div>
+                        <div class="flex-shrink-0" style="text-align:right;"> <span class="text-primary"> Daegu, S.Korea </span> <br> Mar. 2014 – Jun. 2014 </div>
+                    </div> -->
+                </div>
+            </section>
+            <hr class="m-0" />
+            
+            <!-- Awards-->
+            <section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <div class="block-title">
+                        <h2 class="mb-5"> Awads & Honors </h2>
+                    </div>
+                    <!-- <h3 class="mb-3"> <i class="fas fa-trophy text-warning"></i> &nbsp Awards & Honors </h3> -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                        <p class="lead">
+
+                            <div class="timeline-item clearfix">
+                                <h5 class="item-period ">2025</h5>
+                            
+                            <b><li> Alumni Award</b>, <em><a  href="https://times.postech.ac.kr/news/articleView.html?idxno=23477">POSTECH</a></em>
+                            </div>
+
+                        <div class="timeline-item clearfix">
+                            <h5 class="item-period ">2024</h5>
+                        
+                        <b><li> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                            <em> &emsp; Winner - Efficient and Versatile Robust Fine-Tuning of Zero-shot Models </a></em> </li>
+                        </div>
+                        
+                        <div class="timeline-item clearfix">
+                            <h5 class="item-period ">2023</h5>
+                        <b><li> Google PhD Fellowship Program</b>, <em><a  href="https://research.google/outreach/phd-fellowship/recipients/">Google</a></em> </li>
+                        <b><li> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
+                        <em> &emsp; Winner - Self-Taught Metric Learning without Labels </em> </li> 
+                        <b><li>BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
+                            &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation <br> </li>
+
+                        </div>
+                            <div class="timeline-item clearfix">
+                                <h5 class="item-period ">2022</h5>
+
+                        <b><li> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                        <em> &emsp; Winner - Self-Taught Metric Learning without Labels </a></em> </li>
+                        <b><li> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                        <em> &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation </em> </li>
+                        <b><li> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em> <br>
+                        <em> &emsp; Winner - Embedding Transfer with Label Relaxation for Improved Metric Learning</em> </li>
+                        <b><li> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
+                        <em> &emsp; Gold Prize - Offline Active Domain Adaptation</em> </li>
+                        <b><li> CVPR Outstanding Reviewer</b>,<em><a href="https://cvpr2022.thecvf.com/outstanding-reviewers"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) </a></em> <br> </li>
+
+                        </div>
+                            <div class="timeline-item clearfix">
+                                <h5 class="item-period ">2021</h5>
+                        <b><li> ICT Paper contest</b>, <em><a  href="https://contest.etnews.com/13th/result.php">Etnews, Webcash Group, and KSFC </a> </em> <br>
+                        <em> &emsp; 2nd place Prize - Deep Metric Learning Beyond Binary Supervision  </em> </li>
+                        <b><li> SKT AI Fellowship</b>, <em>SK Telecom Co., Ltd</em> </li> 
+                        <b><li> POSTECHIAN Fellowship</b>, <em>POSTECH</em> </li>
+                        <b><li> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
+                        <em> &emsp; Grand Prize - Embedding Transfer with Label Relaxation for Improved Metric Learning </em> </li>
+                        </div>
+                        <div class="timeline-item clearfix">
+                            <h5 class="item-period ">2020</h5>
+                        <li> <b> Naver Ph.D Fellowship</b>, <em><a  href="https://cse.postech.ac.kr/naver-phd-fellowship-award-%EC%8B%9C%EC%83%81">NAVER Corp.</a></em> <br>
+                        <b><li> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em><br>
+                        <em> &emsp; Winner - Deep Metric Learning Beyond Binary Supervision </em> </li>
+                        </div>
+                        </p>
+                        </div>
+                        
+                    </div>
+                </section>
+
+                <section class="resume-section" id="service">
+                    <div class="resume-section-content">
+                        <div class="block-title">
+                            <h2 class="mb-5"> Academic Services </h2>
+                        </div>
+                    <!-- <h3 class="mb-3"> <i class="fa-solid fa-glasses text-warning"></i> &nbsp Reviewer </h3> -->
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                        <h3 class="mb-0">International Conference Reviewer</h4> 
+                        <p>
+                        <li> IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) <b class="text-primary">[Outstanding Reviewer in 2022]</b> <br> </li>
+                        <li> International Conference on Computer Vision (<b>ICCV</b>) </li> 
+                        <li> European Conference on Computer Vision (<b>ECCV</b>) </li> 
+                        <li> International Conference on Machine Learning (<b>ICML</b>) </li> 
+                        <li> International Conference on Learning Representations (<b>ICLR</b>) </li> 
+                        <li> Conference on Neural Information Processing Systems (<b>NeurIPS</b>) </li> 
+                        <li> AAAI Conference on Artificial Intelligence (<b>AAAI</b>) </li> 
+                        <li> IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>)  </li> 
+                        <li> Asian Conference on Computer Vision (<b>ACCV</b>)
+                        <li> International Conference on Machine Vision Applications (<b>MVA</b>) </li> 
+                        <li> International Conference on Pattern Recognition (<b>ICPR</b>) </li> 
+                        </p> <br>
+
+                        <h3 class="mb-0">International Journal Reviewer</h4> </li> 
+                        <p>
+                        <li> Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), IEEE </li> 
+                        <li> International Journal of Computer Vision (<b>IJCV</b>)
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>
