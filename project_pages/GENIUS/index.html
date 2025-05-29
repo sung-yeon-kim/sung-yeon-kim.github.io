@@ -14,16 +14,16 @@
     <meta charset="utf-8">
     <meta name="description" content="GENIUS: A Generative Framework for Universal Multimodal Search">
     <meta property='og:title' content='GENIUS: A Generative Framework for Universal Multimodal Search'/>
-    <meta property='og:url' content='https://your-website-url.com'/>
-    <meta property="og:image" content="static/images/your_banner_image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property='og:url' content='https://sung-yeon-kim.github.io/project_pages/GENIUS'>
+    <meta property="og:image" content="static/images/cvpr_25_genius.png" />
+    <meta property="og:image:width" content="10" />
+    <meta property="og:image:height" content="30" />
 
-    <meta name="twitter:title" content="GENIUS: A Generative Framework for Universal Multimodal Search">
+    <!-- <meta name="twitter:title" content="GENIUS: A Generative Framework for Universal Multimodal Search">
     <meta name="twitter:description" content="An academic project exploring robust fine-tuning methods for zero-shot models.">
     <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble, zero-shot models, machine learning, AI research">
+    <meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble, zero-shot models, machine learning, AI research"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>GENIUS: A Generative Framework for Universal Multimodal Search</title>
@@ -85,6 +85,7 @@
                 <strong> in CVPR 2025 </strong>
               </span>
             </div>
+
             
 
             <div class="column has-text-centered">
@@ -129,7 +130,7 @@
     </div>
   </section>
 
-<section class="is-light is-small" style="margin-top: -5rem; margin-bottom: -2rem;"> <div class="hero-body">
+<section class="hero is-light is-small" style="margin-top: 0rem; margin-bottom: 0rem;"> <div class="hero-body">
       <div class="container is-max-desktop">
         <h3 class="title is-4 has-text-centered">GENIUS can generate discrete identifiers from multimodal queries, enabling universal retrieval across diverse data.</h3>
         <div class="has-text-centered;">
@@ -140,9 +141,40 @@
         <br>
       </div>
     </div>
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Modality-decoupled Semantic Quantization</h2>
+            <p>
+              Examples of our <b>quantization scheme</b> with five levels of codes. The <b>first code</b> indicates <b>modality</b> (0: image, 1: text, and 2: image-text pairs), adapting to instructions. The <b>second code</b> represents <b>primary objects or dominant semantics</b>, while the <b>third code</b> captures <b>key attributes</b> (e.g., 'two', 'red'). Subsequent levels incorporate finer details.
+            </p>
+            <br>
+          <div class="content has-text-centered">
+            <img src="./static/images/semantic_quantization.png" width="100%" alt="Examples of modality-decoupled semantic quantization"/>
+          </div>
+          <div class="content has-text-justified">
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-t2i1">
+          <img id="myt2i0" src="static/images/second_code.png" class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="static/images/third_code.png" class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="static/images/fourth_code.png" class="interpolation-image"/>
+        </div>
+      </div>
+
   </section>
 
-  <section class="section hero is-light">
+  <section class="section is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full">
@@ -218,40 +250,7 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3 has-text-centered">Modality-decoupled Semantic Quantization</h2>
 
-          <h3 class="title is-4">Examples of modality-decoupled semantic quantization</h3>
-          <div class="content has-text-centered">
-            <img src="./static/images/semantic_quantization.png" width="100%" alt="Examples of modality-decoupled semantic quantization"/>
-          </div>
-          <div class="content has-text-justified">
-            <p>
-              Examples of our <b>quantization scheme</b> with five levels of codes. The <b>first code</b> indicates <b>modality</b> (0: image, 1: text, and 2: image-text pairs), adapting to instructions. The <b>second code</b> represents <b>primary objects or dominant semantics</b>, while the <b>third code</b> captures <b>key attributes</b> (e.g., 'two', 'red'). Subsequent levels incorporate finer details.
-            </p>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop has-text-centered">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-t2i1">
-          <img id="myt2i0" src="static/images/second_code.png" class="interpolation-image"/>
-        </div>
-        <div class="item item-t2i1">
-          <img id="myt2i1" src="static/images/third_code.png" class="interpolation-image"/>
-        </div>
-        <div class="item item-t2i1">
-          <img id="myt2i1" src="static/images/fourth_code.png" class="interpolation-image"/>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
