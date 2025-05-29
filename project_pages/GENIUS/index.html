@@ -1,118 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners -->
-  <meta name="description" content="GENIUS: A Generative Framework for Universal Multimodal Search">
-  <meta property="og:title" content="GENIUS: A Generative Framework for Universal Multimodal Search"/>
-  <meta property="og:description" content="An academic project exploring robust fine-tuning methods for zero-shot models."/>
-  <meta property="og:url" content="https://your-website-url.com"/>
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+    <meta charset="utf-8">
+    <meta name="description" content="GENIUS: A Generative Framework for Universal Multimodal Search">
+    <meta property='og:title' content='GENIUS: A Generative Framework for Universal Multimodal Search'/>
+    <meta property='og:url' content='https://your-website-url.com'/>
+    <meta property="og:image" content="static/images/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <meta name="twitter:title" content="GENIUS: A Generative Framework for Universal Multimodal Search">
-  <meta name="twitter:description" content="An academic project exploring robust fine-tuning methods for zero-shot models.">
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble, zero-shot models, machine learning, AI research">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:title" content="GENIUS: A Generative Framework for Universal Multimodal Search">
+    <meta name="twitter:description" content="An academic project exploring robust fine-tuning methods for zero-shot models.">
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="robust fine-tuning, parameter-efficient fine-tuning, self-ensemble, zero-shot models, machine learning, AI research">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GENIUS: A Generative Framework for Universal Multimodal Search</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <title>GENIUS: A Generative Framework for Universal Multimodal Search</title>
+    <link rel="icon" href="./static/images/favicon.ico">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="./static/css/tab_gallery.css"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
 
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63155504-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-63155504-4');
-  </script>
-
-  <!-- JavaScript Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-
-  <style>
-    /* Custom Styles */
-    .publication-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .publication-authors a {
-      color: #363636;
-      text-decoration: none;
-    }
-    .publication-authors a:hover {
-      text-decoration: underline;
-    }
-    .caption {
-      font-size: 0.9rem;
-      color: #4a4a4a;
-      margin-top: 0.5rem;
-    }
-    .fig-label {
-      font-weight: bold;
-    }
-    .paper-info-box {
-      background-color: #f9f9f9;
-      padding: 1rem;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-    }
-    .line {
-      border-top: 1px solid #e5e5e5;
-      margin: 2rem 0;
-    }
-    iframe {
-      border: none;
-    }
-  </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63155504-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-63155504-4');
+    </script>
 </head>
-
 <body>
-
-  <!-- Header Section -->
-  <section class="hero">
+  <section class="hero banner">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">GENIUS: A Generative Framework for Universal Multimodal Search</h1>
+            <h1 class="title is-2 publication-title">GENIUS:<br> A Generative Framework for Universal Multimodal Search</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
                 <a href="http://cvlab.postech.ac.kr/~sungyeon" target="_blank">Sungyeon Kim</a><sup>1,2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Xinliang Zhu</a><sup>1</sup>,
+                <a href="https://www.amazon.science/author/xinliang-zhu" target="_blank">Xinliang Zhu</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Xiaofan Lin</a><sup>1</sup>,
+                <a href="https://www.amazon.science/author/xiaofan-lin" target="_blank">Xiaofan Lin</a><sup>1</sup>,<br>
               </span> <br>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Muhammet Bastan</a><sup>1</sup>,
+                <a href="https://www.amazon.science/author/muhammet-bastan" target="_blank">Muhammet Bastan</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=CiQLGVMAAAAJ&hl" target="_blank">Douglas Gray</a><sup>1</sup>,
+                <a href="https://www.amazon.science/author/doug-gray" target="_blank">Douglas Gray</a><sup>1</sup>,
               </span>
               <span class="author-block">
                 <a href="https://cvlab.postech.ac.kr/~suhakwak" target="_blank">Suha Kwak</a><sup>2</sup>
@@ -127,47 +76,42 @@
               </span>
             </div>
             
-            <br>
-            <div class="publication-links">
-              <!-- Arxiv PDF link -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
 
-              <!-- Supplementary PDF link -->
-              <!-- <span class="link-block">
-                <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/02642-supp.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Supplementary</span>
-                </a>
-              </span> -->
-
-              <!-- Github link -->
-              <span class="link-block">
-                <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code (Will be updated soon)</span>
-                </a>
-              </span>
-
-              <!-- ArXiv abstract Link -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Will be updated soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2503.19868" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#bibtex" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-obp"></i>
+                    </span>
+                    <span>BibTex</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -175,27 +119,19 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-          <!-- 중앙 정렬된 이미지 -->
-          <div class="has-text-centered">
-            <figure class="image" style="width:70%; margin: 0 auto; margin-top: -4rem;">
-              <img src="static/images/thumbnail.png" alt="Thumbnail Image"/>
-            </figure>
-          </div>
-          
-          <div class="caption">
-          <h2 class="subtitle has-text-centered">
-            The GENIUS framework generates identifiers across modalities based on queries and
-instructions, where the first-level code indicates modality.
-          </h2>
-          </div>
+<section class="is-light is-small" style="margin-top: -4rem;"> <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h3 class="title is-5">GENIUS can generate discrete identifiers from multimodal queries, enabling universal retrieval across diverse data.</h3>
+        <div class="has-text-centered;">
+          <figure class="image" style="width:60%; margin: 0 auto; margin-top: 1rem;">
+            <img src="static/images/cvpr_25_genius.png" alt="Thumbnail Image" class="interpolation-image"/>
+          </figure>
         </div>
+        <br>
       </div>
     </div>
   </section>
 
-  <!-- Abstract Section -->
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
@@ -208,199 +144,153 @@ instructions, where the first-level code indicates modality.
           </div>
         </div>
       </div>
-    </section>            
-  <!-- End Abstract Section -->
+    </section>   
 
-    <!-- Framework Section -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">GENIUS Framework</h2>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:100%; margin: 0 auto;">
-            <img src="static/images/overview.png" alt="Task-specific Information Retrieval"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            GENIUS includes three components: image and text encoders, a modality-decoupled
-quantization module, and an autoregressive decoder. First, the image-text encoders are
-pre-trained to enhance instruction comprehension and representation abilities. Next, residual quantization is trained to assign discrete IDs
-to candidate embeddings, where the first quantization level captures modality information and subsequent levels encode semantic details.
-Finally, the decoder learns to generate modality-decoupled semantic IDs. At inference, GENIUS generates candidate IDs from a query
-using Trie-constrained beam search, additionally followed by embedding-based re-ranking to further enhance retrieval accuracy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-  <!-- Experimental Results Section -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
-
-      <!-- 1. Task-specific Information Retrieval -->
-      <div class="content">
-        <h3 class="title is-4"> Task-specific Information Retrieval</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:100%; margin: 0 auto;">
-            <img src="static/images/quantitative_results.png" alt="Task-specific Information Retrieval"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            Performance of methods on the M-BEIR dataset, retrieved from a task-specific pool. R
-denotes re-ranking using embedding vectors within the set of predicted candidates. Some datasets are denoted by abbreviations: VN–
-VisualNews, F200K–Fashion200K, InfoS–InfoSeek, and FIQ–FashionIQ.
-          </p>
-        </div>
-      </div>
-
-      <!-- 2. Universal Information Retrieval. -->
-      <div class="content">
-        <h3 class="title is-4"> Universal Information Retrieval.</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:60%; margin: 0 auto;">
-            <img src="static/images/quantitative_results2.png" alt="Universal Information Retrieval."/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            Recall@5 results of methods except Fashion200K and FashionIQ, where Recall@10
-is reported. Retrieval is performed from a global pool spanning
-diverse modalities. R denotes re-ranking using embedding vectors
-within the set of predicted candidates.
-          </p>
-        </div>
-      </div>
-
-      <!-- 3. Cross-modal retrieval -->
-      <div class="content">
-        <h3 class="title is-4">Text-to-image retrieval </h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:70%; margin: 0 auto;">
-            <img src="static/images/quantitative_results3.png" alt="Text-to-image Retrieval Results"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            Text-to-image retrieval performance comparison on standard generative retrieval benchmark (Flickr30K and MS-COCO).
-R denotes re-ranking. Note that all models, including GENIUS,
-are trained and evaluated separately on each dataset.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  <!-- End Experimental Results Section -->
-
-  <!-- Modality-decoupled semantic quantization -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Modality-decoupled semantic quantization</h2>
-
-      <!-- 1. Effectiveness of key components -->
-      <div class="content">
-        <h3 class="title is-4"> Examples of modality-decoupled semantic quantization.</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:100%; margin: 0 auto;">
-            <img src="static/images/semantic_quantization.png" alt="Examples of modality-decoupled semantic quantization"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            For simplicity, we use a quantization scheme with five levels of
-codes, where each code (except the first) has a value of up to 256. The first code (top) indicates modality: 0 for image, 1 for text, and 2
-for image-text pairs. If an instruction is provided, this code adapts to the modality specified by the instruction. The second code (middle)
-represents primary objects or dominant semantics shared across modalities, while the third code (bottom) captures key attributes of the
-main object, such as “two” or “red”, which are consistent across objects or data types. Beyond these levels, finer and additional information
-is incorporated to enrich the representation.
-          </p>
-        </div>
-      </div>
-
-
-
-    </div>
-  </section>
-
-  <!-- Efficiency -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Efficiency of GENIUS</h2>
-
-      <!-- 1. Computation Effiecincy -->
-      <div class="content">
-        <h3 class="title is-4">Computation Effiecincy</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:55%; margin: 0 auto;">
-            <img src="static/images/efficiency.png" alt="Ablation Study Results"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content has-text-centered">
-            Efficiency in processed queries per second across varying dataset sizes.
-          </p>
-        </div>
-      </div>
-
-      <!-- 2. Storage-->
-      <div class="content">
-        <h3 class="title is-4"> Storage</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text">
-          <figure class="image" style="width:10-5%; margin: 0 auto;">
-            <img src="static/images/storage_efficiency.png" alt="Storage Efficiency"/>
-          </figure>
-        </div>
-        
-        <div class="caption has-text">
-          <p class="caption-content">
-            Comparison of storage efficiency between CLIP and GENIUS. GENIUS achieves a more than 99% reduction in storage requirements, significantly enhancing scalability for large-scale retrieval tasks.
-          </p>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">GENIUS Framework</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/overview.png" width="100%" alt="GENIUS Framework Architecture"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              The <b>GENIUS framework</b> has three components: <b>image and text encoders</b>, a <b>modality-decoupled quantization module</b>, and an <b>autoregressive decoder</b>. The encoders are pre-trained for better instruction comprehension. <b>Residual quantization</b> assigns <b>discrete IDs</b> to embeddings, with the first level encoding <b>modality</b> and subsequent levels capturing <b>semantic details</b>. The decoder generates these IDs. During inference, GENIUS uses <b>Trie-constrained beam search</b> to generate IDs, optionally followed by <b>embedding-based re-ranking</b> for enhanced accuracy.
+            </p>
+            <br>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Ablation Studies Section -->
 
-  <!-- Acknowledgements Section -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title">Acknowledgements</h2>
-      <p align="justify">
-        Part of this work was done while Sungyeon Kim was an
-        intern at Amazon. Sungyeon Kim and Suha Kwak were
-        supported by NRF grants (RS-2021-NR059830–30%, RS2022-II220290–30%, RS-2022-II220926–30%) and IITP
-        grants (RS-2019-II191906–10%, AI Graduate School -
-        POSTECH) funded by Ministry of Science and ICT, Korea.
-      </p>
-      <div class="line"></div>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+
+          <h3 class="title is-4">Task-specific Information Retrieval</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/quantitative_results.png" width="100%" alt="Task-specific Information Retrieval Results"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Performance on the <b>M-BEIR dataset</b> (task-specific pool). <b>R</b> signifies <b>re-ranking</b> with embedding vectors. Datasets include <b>VN</b> (VisualNews), <b>F200K</b> (Fashion200K), <b>InfoS</b> (InfoSeek), and <b>FIQ</b> (FashionIQ).
+            </p>
+            <br>
+          </div>
+
+          <h3 class="title is-4">Universal Information Retrieval</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/quantitative_results2.png" width="60%" alt="Universal Information Retrieval Results"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              <b>Recall@5 results</b> (Recall@10 for Fashion200K and FashionIQ) on a <b>global, multi-modal pool</b>. <b>R</b> indicates <b>re-ranking</b> using embedding vectors within predicted candidates.
+            </p>
+            <br>
+          </div>
+
+          <h3 class="title is-4">Generative Retrieval (Text-to-Image Retrieval)</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/quantitative_results3.png" width="70%" alt="Text-to-image Retrieval Results"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              <b>Text-to-image retrieval performance</b> on <b>Flickr30K</b> and <b>MS-COCO</b> benchmarks. <b>R</b> denotes <b>re-ranking</b>. All models, including <b>GENIUS</b>, are trained and evaluated per dataset.
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <!-- End Acknowledgements Section -->
 
-  <!-- BibTeX Citation Section -->
-  <section class="section" id="BibTeX">
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Modality-decoupled Semantic Quantization</h2>
+
+          <h3 class="title is-4">Examples of modality-decoupled semantic quantization</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/semantic_quantization.png" width="100%" alt="Examples of modality-decoupled semantic quantization"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Our <b>quantization scheme</b> uses five levels of codes. The <b>first code</b> indicates <b>modality</b> (0: image, 1: text, and 2: image-text pairs), adapting to instructions. The <b>second code</b> represents <b>primary objects or dominant semantics</b>, while the <b>third code</b> captures <b>key attributes</b> (e.g., 'two', 'red'). Subsequent levels incorporate finer details.
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop has-text-centered">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-t2i1">
+          <img id="myt2i0" src="static/images/second_code.png" class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="static/images/third_code.png" class="interpolation-image"/>
+        </div>
+        <div class="item item-t2i1">
+          <img id="myt2i1" src="static/images/fourth_code.png" class="interpolation-image"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Efficiency of GENIUS</h2>
+
+          <h3 class="title is-4">Throughput</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/efficiency.png" width="55%" alt="Throughput Efficiency"/>
+          </div>
+          <div class="content has-text-justified">
+            <p class="has-text-centered">
+              <b>Efficiency</b> in <b>processed queries per second</b> across varying <b>dataset sizes</b>.
+            </p>
+            <br>
+          </div>
+
+          <h3 class="title is-4">Storage</h3>
+          <div class="content has-text-centered">
+            <img src="./static/images/storage_efficiency.png" width="100%" alt="Storage Efficiency"/>
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              <b>Storage efficiency</b> comparison between <b>CLIP</b> and <b>GENIUS</b>. <b>GENIUS</b> achieves over <b>99% reduction</b> in storage, significantly enhancing <b>scalability</b> for large-scale retrieval.
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+          <div class="content has-text-justified">
+            <p>
+              Part of this work was done while Sungyeon Kim was an intern at Amazon. Sungyeon Kim and Suha Kwak were supported by NRF grants (RS-2021-NR059830–30%, RS2022-II220926–30%) and IITP grants (RS-2019-II191906–10%, AI Graduate School - POSTECH) funded by Ministry of Science and ICT, Korea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="bibtex">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>@inproceedings{kim2025genius,
@@ -412,29 +302,20 @@ is incorporated to enrich the representation.
   </code></pre>
     </div>
   </section>
-  <!-- End BibTeX Citation Section -->
 
-  <!-- Footer Section -->
   <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the source code of this website; we just ask that you link back to this page in the footer.<br>
-              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website; we just ask that you link back to this page in the footer.<br>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
         </div>
       </div>
     </div>
   </footer>
-  <!-- End Footer Section -->
-
-  <!-- Statcounter Tracking Code -->
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-  <!-- End of Statcounter Code -->
 
 </body>
 </html>
