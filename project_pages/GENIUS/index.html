@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+</head>
+<head>
     <meta charset="utf-8">
     <meta name="description" content="GENIUS: A Generative Framework for Universal Multimodal Search">
     <meta property='og:title' content='GENIUS: A Generative Framework for Universal Multimodal Search'/>
@@ -119,7 +129,7 @@
     </div>
   </section>
 
-<section class="is-light is-small" style="margin-top: -4rem;"> <div class="hero-body">
+<section class="is-light is-small" style="margin-top: -4rem; margin-bottom: -2rem;"> <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
         <h3 class="title is-5">GENIUS can generate discrete identifiers from multimodal queries, enabling universal retrieval across diverse data.</h3>
         <div class="has-text-centered;">
@@ -177,7 +187,7 @@
           </div>
           <div class="content has-text-justified">
             <p>
-              Performance on the <b>M-BEIR dataset</b> (task-specific pool). <b>R</b> signifies <b>re-ranking</b> with embedding vectors. Datasets include <b>VN</b> (VisualNews), <b>F200K</b> (Fashion200K), <b>InfoS</b> (InfoSeek), and <b>FIQ</b> (FashionIQ).
+              Performance on the <b>M-BEIR dataset</b> (task-specific pool). $\mathcal{R}$ signifies <b>re-ranking</b> with embedding vectors. Datasets include <b>VN</b> (VisualNews), <b>F200K</b> (Fashion200K), <b>InfoS</b> (InfoSeek), and <b>FIQ</b> (FashionIQ).
             </p>
             <br>
           </div>
@@ -188,7 +198,7 @@
           </div>
           <div class="content has-text-justified">
             <p>
-              <b>Recall@5 results</b> (Recall@10 for Fashion200K and FashionIQ) on a <b>global, multi-modal pool</b>. <b>R</b> indicates <b>re-ranking</b> using embedding vectors within predicted candidates.
+              <b>Recall@5 results</b> (Recall@10 for Fashion200K and FashionIQ) on a <b>global, multi-modal pool</b>. $\mathcal{R}$ indicates <b>re-ranking</b> using embedding vectors within predicted candidates.
             </p>
             <br>
           </div>
@@ -199,7 +209,7 @@
           </div>
           <div class="content has-text-justified">
             <p>
-              <b>Text-to-image retrieval performance</b> on <b>Flickr30K</b> and <b>MS-COCO</b> benchmarks. <b>R</b> denotes <b>re-ranking</b>. All models, including <b>GENIUS</b>, are trained and evaluated per dataset.
+              <b>Text-to-image retrieval performance</b> on <b>Flickr30K</b> and <b>MS-COCO</b> benchmarks. $\mathcal{R}$ denotes <b>re-ranking</b>. All models, including <b>GENIUS</b>, are trained and evaluated per dataset.
             </p>
             <br>
           </div>
