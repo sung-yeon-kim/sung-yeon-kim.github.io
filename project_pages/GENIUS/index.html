@@ -121,9 +121,9 @@
 
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <sup>1</sup> Amazon, US<br>
+                <sup>1</sup> Amazon, US, 
                 <sup>2</sup> POSTECH, Korea <br>
-                CVPR 2025
+                <strong> in CVPR 2025 </strong>
               </span>
             </div>
             
@@ -179,14 +179,15 @@
     <div class="container is-max-desktop">
           <!-- 중앙 정렬된 이미지 -->
           <div class="has-text-centered">
-            <figure class="image" style="width:90%; margin: 0 auto;">
+            <figure class="image" style="width:70%; margin: 0 auto; margin-top: -4rem;">
               <img src="static/images/thumbnail.png" alt="Thumbnail Image"/>
             </figure>
           </div>
           
           <div class="caption">
           <h2 class="subtitle has-text-centered">
-            R-Adapter combines the strengths of robust fine-tuning and parameter-efficient fine-tuning (PEFT).
+            The GENIUS framework generates identifiers across modalities based on queries and
+instructions, where the first-level code indicates modality.
           </h2>
           </div>
         </div>
@@ -210,137 +211,171 @@
     </section>            
   <!-- End Abstract Section -->
 
+    <!-- Framework Section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">GENIUS Framework</h2>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text-centered">
+          <figure class="image" style="width:100%; margin: 0 auto;">
+            <img src="static/images/overview.png" alt="Task-specific Information Retrieval"/>
+          </figure>
+        </div>
+        
+        <div class="caption">
+          <p class="caption-content">
+            GENIUS includes three components: image and text encoders, a modality-decoupled
+quantization module, and an autoregressive decoder. First, the image-text encoders are
+pre-trained to enhance instruction comprehension and representation abilities. Next, residual quantization is trained to assign discrete IDs
+to candidate embeddings, where the first quantization level captures modality information and subsequent levels encode semantic details.
+Finally, the decoder learns to generate modality-decoupled semantic IDs. At inference, GENIUS generates candidate IDs from a query
+using Trie-constrained beam search, additionally followed by embedding-based re-ranking to further enhance retrieval accuracy.
+          </p>
+        </div>
+      </div>
+    </section>
 
   <!-- Experimental Results Section -->
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Experimental Results</h2>
 
-      <!-- 1. ImageNet classification under distribution shifts -->
+      <!-- 1. Task-specific Information Retrieval -->
       <div class="content">
-        <h3 class="title is-5">- ImageNet classification under distribution shifts</h3>
+        <h3 class="title is-4"> Task-specific Information Retrieval</h3>
         
         <!-- 중앙 정렬된 이미지 -->
         <div class="has-text-centered">
-          <figure class="image" style="width:85%; margin: 0 auto;">
-            <img src="static/images/quantitative_results.png" alt="ImageNet Classification Results"/>
+          <figure class="image" style="width:100%; margin: 0 auto;">
+            <img src="static/images/quantitative_results.png" alt="Task-specific Information Retrieval"/>
           </figure>
         </div>
         
         <div class="caption">
           <p class="caption-content">
-            <strong class="fig-label">Table 1</strong>. Top-1 accuracy of models with different robust fine-tuning on ImageNet (ID)
-            and OOD datasets. “OOD avg” is the average accuracy across the five OOD datasets.
-            Entries in green indicate fewer parameters than full fine-tuning, and red use more.
+            Performance of methods on the M-BEIR dataset, retrieved from a task-specific pool. R
+denotes re-ranking using embedding vectors within the set of predicted candidates. Some datasets are denoted by abbreviations: VN–
+VisualNews, F200K–Fashion200K, InfoS–InfoSeek, and FIQ–FashionIQ.
           </p>
         </div>
       </div>
 
-      <!-- 2. Few-shot ImageNet classification -->
+      <!-- 2. Universal Information Retrieval. -->
       <div class="content">
-        <h3 class="title is-5">- Few-shot ImageNet classification</h3>
+        <h3 class="title is-4"> Universal Information Retrieval.</h3>
         
         <!-- 중앙 정렬된 이미지 -->
         <div class="has-text-centered">
-          <figure class="image" style="width:85%; margin: 0 auto;">
-            <img src="static/images/quantitative_results2.png" alt="Few-shot ImageNet Classification Results"/>
+          <figure class="image" style="width:60%; margin: 0 auto;">
+            <img src="static/images/quantitative_results2.png" alt="Universal Information Retrieval."/>
           </figure>
         </div>
         
         <div class="caption">
           <p class="caption-content">
-            <strong class="fig-label">Table 2</strong>. Top-1 accuracy for adapting CLIP to 16-shot ImageNet classification on ID
-            and OOD datasets. OOD avg is the average accuracy across the four OOD datasets.
-            “r-Rank” denotes our models with adapters employing low-rank decomposition while
-            “Full-Rank” is no decomposition. All methods adopt CLIP ViT-B/16 as the backbone.
+            Recall@5 results of methods except Fashion200K and FashionIQ, where Recall@10
+is reported. Retrieval is performed from a global pool spanning
+diverse modalities. R denotes re-ranking using embedding vectors
+within the set of predicted candidates.
           </p>
         </div>
       </div>
 
       <!-- 3. Cross-modal retrieval -->
       <div class="content">
-        <h3 class="title is-5">- Cross-modal retrieval</h3>
+        <h3 class="title is-4">Text-to-image retrieval </h3>
         
         <!-- 중앙 정렬된 이미지 -->
         <div class="has-text-centered">
-          <figure class="image" style="width:85%; margin: 0 auto;">
-            <img src="static/images/quantitative_results3.png" alt="Cross-modal Retrieval Results"/>
+          <figure class="image" style="width:70%; margin: 0 auto;">
+            <img src="static/images/quantitative_results3.png" alt="Text-to-image Retrieval Results"/>
           </figure>
         </div>
         
         <div class="caption">
           <p class="caption-content">
-            <strong class="fig-label">Table 3</strong>. Cross-modal retrieval performance on the COCO (5K test set) and Flickr30K
-            datasets in Recall at K (R@K). B and L denote the use of 12-layer and 24-layer transformer encoders, respectively. FLYPL training has failed due to memory constraints.
+            Text-to-image retrieval performance comparison on standard generative retrieval benchmark (Flickr30K and MS-COCO).
+R denotes re-ranking. Note that all models, including GENIUS,
+are trained and evaluated separately on each dataset.
           </p>
         </div>
       </div>
 
-      <!-- 4. Open-vocabulary segmentation -->
-      <div class="content">
-        <h3 class="title is-5">- Open-vocabulary segmentation</h3>
-        
-        <!-- 중앙 정렬된 이미지 -->
-        <div class="has-text-centered">
-          <figure class="image" style="width:85%; margin: 0 auto;">
-            <img src="static/images/quantitative_results4.png" alt="Open-vocabulary Segmentation Results"/>
-          </figure>
-        </div>
-        
-        <div class="caption">
-          <p class="caption-content">
-            <strong class="fig-label">Table 4</strong>. Comparison of mIoU results between the OVSeg fine-tuned with our method
-            and existing open-vocabulary segmentation models. Note that OVSeg (Org.) is trained
-            in two stages, starting with full CLIP model fine-tuning followed by mask prompt
-            tuning, whereas OVSeg (Ours) involves single-stage adapter training.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
   <!-- End Experimental Results Section -->
 
-  <!-- Ablation Studies Section -->
+  <!-- Modality-decoupled semantic quantization -->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+      <h2 class="title is-3 has-text-centered">Modality-decoupled semantic quantization</h2>
 
       <!-- 1. Effectiveness of key components -->
       <div class="content">
-        <h3 class="title is-5">- Effectiveness of key components</h3>
+        <h3 class="title is-4"> Examples of modality-decoupled semantic quantization.</h3>
         
         <!-- 중앙 정렬된 이미지 -->
         <div class="has-text-centered">
-          <figure class="image" style="width:85%; margin: 0 auto;">
-            <img src="static/images/ablation1.png" alt="Ablation Study Results"/>
+          <figure class="image" style="width:100%; margin: 0 auto;">
+            <img src="static/images/semantic_quantization.png" alt="Examples of modality-decoupled semantic quantization"/>
           </figure>
         </div>
         
         <div class="caption">
           <p class="caption-content">
-            <strong class="fig-label">Table 5</strong>. Ablation study on key components of our method and comparison with the
-            other adapter-tuning methods using full-rank structure. The experiments are performed
-            on the ImageNet classification with ViT-B/32. The last row (E10) corresponds to our
-            default configuration. DO: Dropout in Adapters. DP: Drop-path in pre-trained layers.
-            AD: Adapter Dropping. AC: Accumulation. RS: Re-scaling. LS: Label Smoothing.
+            For simplicity, we use a quantization scheme with five levels of
+codes, where each code (except the first) has a value of up to 256. The first code (top) indicates modality: 0 for image, 1 for text, and 2
+for image-text pairs. If an instruction is provided, this code adapts to the modality specified by the instruction. The second code (middle)
+represents primary objects or dominant semantics shared across modalities, while the third code (bottom) captures key attributes of the
+main object, such as “two” or “red”, which are consistent across objects or data types. Beyond these levels, finer and additional information
+is incorporated to enrich the representation.
           </p>
         </div>
       </div>
 
-      <!-- 2. Re-scaling coefficient -->
+
+
+    </div>
+  </section>
+
+  <!-- Efficiency -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Efficiency of GENIUS</h2>
+
+      <!-- 1. Computation Effiecincy -->
       <div class="content">
-        <h3 class="title is-5">- Re-scaling coefficient</h3>
+        <h3 class="title is-4">Computation Effiecincy</h3>
         
         <!-- 중앙 정렬된 이미지 -->
         <div class="has-text-centered">
-          <figure class="image" style="width:75%; margin: 0 auto;">
-            <img src="static/images/coeff_variation.png" alt="Re-scaling Coefficient Variation"/>
+          <figure class="image" style="width:55%; margin: 0 auto;">
+            <img src="static/images/efficiency.png" alt="Ablation Study Results"/>
           </figure>
         </div>
         
-        <div class="caption has-text-centered">
+        <div class="caption">
+          <p class="caption-content has-text-centered">
+            Efficiency in processed queries per second across varying dataset sizes.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Storage-->
+      <div class="content">
+        <h3 class="title is-4"> Storage</h3>
+        
+        <!-- 중앙 정렬된 이미지 -->
+        <div class="has-text">
+          <figure class="image" style="width:10-5%; margin: 0 auto;">
+            <img src="static/images/storage_efficiency.png" alt="Storage Efficiency"/>
+          </figure>
+        </div>
+        
+        <div class="caption has-text">
           <p class="caption-content">
-            <strong class="fig-label">Figure 1</strong>. Performance of our method varying re-scaling coefficient &alpha; against WiSE-FT.
+            Comparison of storage efficiency between CLIP and GENIUS. GENIUS achieves a more than 99% reduction in storage requirements, significantly enhancing scalability for large-scale retrieval tasks.
           </p>
         </div>
       </div>
