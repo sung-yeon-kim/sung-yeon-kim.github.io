@@ -131,10 +131,10 @@
   </section>
 
 <section class="hero is-light is-small" style="margin-top: 0rem; margin-bottom: 0rem;"> <div class="hero-body">
-      <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
         <h3 class="title is-4 has-text-centered">GENIUS can generate discrete identifiers from multimodal queries, enabling universal retrieval across diverse data.</h3>
         <div class="has-text-centered;">
-          <figure class="image" style="width:60%; margin: 0 auto; margin-top: 1rem;">
+          <figure class="image" style="width:60%; margin: 0 auto; margin-top: 1rem; margin-bottom: 1rem;">
             <img src="static/images/cvpr_25_genius.png" alt="Thumbnail Image" class="interpolation-image"/>
           </figure>
         </div>
@@ -150,7 +150,6 @@
               Examples of our <b>quantization scheme</b> with five levels of codes. The <b>first code</b> indicates <b>modality</b> (0: image, 1: text, and 2: image-text pairs), adapting to instructions. The <b>second code</b> represents <b>primary objects or dominant semantics</b>, while the <b>third code</b> captures <b>key attributes</b> (e.g., 'two', 'red'). Subsequent levels incorporate finer details.
           </p>
           </div>  
-            <br>
           <div class="content has-text-centered">
             <img src="./static/images/semantic_quantization.png" width="100%" alt="Examples of modality-decoupled semantic quantization"/>
           </div>
@@ -160,18 +159,18 @@
         </div>
       </div>
       
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-t2i0">
-          <img id="myt2i0" src="static/images/second_code.png" class="interpolation-image"/>
-        </div>
-        <div class="item item-t2i1">
-          <img id="myt2i1" src="static/images/third_code.png" class="interpolation-image"/>
-        </div>
-        <div class="item item-t2i2">
-          <img id="myt2i2" src="static/images/fourth_code.png" class="interpolation-image"/>
-        </div>
-      </div>
-    </div>
+     <div id="results-carousel" class="carousel results-carousel" style="margin-top: -4rem;">
+       <div class="item item-t2i0">
+         <img id="myt2i0" src="static/images/second_code.png" class="interpolation-image"/>
+       </div>
+       <div class="item item-t2i1">
+         <img id="myt2i1" src="static/images/third_code.png" class="interpolation-image"/>
+       </div>
+       <div class="item item-t2i2">
+         <img id="myt2i2" src="static/images/fourth_code.png" class="interpolation-image"/>
+       </div>
+     </div>
+   </div>
 
   </section>
 
