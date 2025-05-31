@@ -263,9 +263,14 @@
             <img src="./static/images/efficiency.png" width="55%" alt="Throughput Efficiency"/>
           </div>
           <div class="content has-text-justified">
-            <p class="has-text-centered">
-              <b>Efficiency</b> in <b>processed queries per second</b> across varying <b>dataset sizes</b>.
-            </p>
+            <p class=>
+              We compare <b> retrieval efficiency </b>
+between embedding-based (CLIP) and generative methods
+(GRACE, GENIUS) by measuring <b>queries per second</b> .  As the candidate dataset size increases, the efficiency of CLIP declines due
+to the growing cost of the nearest neighbor search, while
+generative methods remain <b> nearly constant </b>. GENIUS achieves <b> roughly 4 times higher efficiency </b>
+than GRACE. 
+</p>
             <br>
           </div>
 
