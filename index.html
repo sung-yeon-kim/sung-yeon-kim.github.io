@@ -27,6 +27,15 @@
                 text-align: left; /* Align text to the right */
                 font-family: "Courier New"; /* Modern fixed-width fonts */
             }
+            
+            /* Reduce list indentation */
+            ul {
+                padding-left: 20px; /* Reduce from default 40px to 20px */
+            }
+            
+            li {
+                margin-bottom: 5px; /* Add some spacing between list items */
+            }
         </style>
         
 
@@ -203,12 +212,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <div class="social-icons">
-                        <li>
-                            <a class="social-icon" href="https://github.com/sung-yeon-kim/"><i class="fab fa-github"></i></a>
-                            <a class="social-icon" href="https://scholar.google.com/citations?hl=ko&user=05Ff7hcAAAAJ"><i class="fab fa-google"></i></a>
-                            <a class="social-icon" href="https://www.linkedin.com/in/sungyeonkim-b47b0a242/"><i class="fab fa-linkedin"></i></a>
-                            <a class="social-icon" href="Sungyeon_CV.pdf"><i class="fa-solid fa-address-card"></i></a>
-                        </li>
+                      <li>
+                          <a class="social-icon" href="https://github.com/sung-yeon-kim/"><i class="fab fa-github"></i></a>
+                          <a class="social-icon" href="https://scholar.google.com/citations?hl=ko&user=05Ff7hcAAAAJ"><i class="fab fa-google"></i></a>
+                          <a class="social-icon" href="https://www.linkedin.com/in/sungyeonkim-b47b0a242/"><i class="fab fa-linkedin"></i></a>
+                          <a class="social-icon" href="Sungyeon_CV.pdf"><i class="fa-solid fa-address-card"></i></a>
+                      </li>
                     </div>
                     <br>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
@@ -692,44 +701,6 @@
             </section>
             <hr class="m-0" />
             
-            <!-- Technical Skills -->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <div class="block-title">
-                        <h2 class="mb-5"> Technical Skills </h2>
-                    </div>
-                    
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">Programming & Infrastructure</h4>
-                            <p>Python, C++, CUDA, PyTorch, TensorFlow, PySpark, AWS (S3, EC2), Docker, Bash</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">Machine Learning & AI</h4>
-                            <p>Multimodal Retrieval, Deep Metric Learning, Self-supervised Learning, Generative Modeling, Large-scale Representation Learning, Vision–Language Models (CLIP, BLIP-2, LLaVA), Large Language Models (LLMs), Multimodal LLMs (MLLMs), Retrieval-Augmented Generation (RAG), Active Learning, Domain Generalization, Parameter-efficient Learning</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">Distributed Training & Systems</h4>
-                            <p>PyTorch Distributed, DeepSpeed, Accelerate, Data/Model Parallelism, Mixed-precision Optimization, GPU Cluster Orchestration, Large-batch Training Pipelines</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="flex-grow-1">
-                            <h4 class="mb-1">Languages</h4>
-                            <p>English (Professional), Korean (Native)</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
@@ -740,18 +711,20 @@
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Computer Vision Lab, POSTECH (Pohang University of Science and Technology)</h3>
                             <div class="lead mb-3">Ph.D at Computer Science and Engineering</div>
-                            <li> Advised by Prof. Suha Kwak.</li>
-                            <li> Recipient of the Alumni Award.</li>
-                            <li> Dissertation: Towards Retrieval at Scale via Compact Embeddings and Generative Modeling</li>
-                            <li> Committee: 
-                                <a  href="https://suhakwak.github.io/">Suha Kwak</a>, 
-                                <a  href="https://cvlab.postech.ac.kr/~mcho/">Minsu Cho</a>, 
-                                <a  href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a>, 
-                                <a  href="https://sites.google.com/view/jungseulok">Jungseul Ok</a>, 
-                                <a  href="https://cv.snu.ac.kr/index.php/bhhan/">Bohyung Han</a> 
-                            </li>
-                            <li> Research focuses on deep metric learning, multimodal and generative learning, and representation learning.</li>
-                            <li> Additional research experience includes domain generalization, active learning, and multimodal reasoning with large language and multimodal large language models (LLMs / MLLMs).</li>
+                            <ul>
+                              <li> Advised by Prof. Suha Kwak.</li>
+                              <li> Recipient of the Alumni Award.</li>
+                              <li> Dissertation: Towards Retrieval at Scale via Compact Embeddings and Generative Modeling</li>
+                              <li> Committee: 
+                                  <a  href="https://suhakwak.github.io/">Suha Kwak</a>, 
+                                  <a  href="https://cvlab.postech.ac.kr/~mcho/">Minsu Cho</a>, 
+                                  <a  href="https://cg.postech.ac.kr/leesy/">Seungyong Lee</a>, 
+                                  <a  href="https://sites.google.com/view/jungseulok">Jungseul Ok</a>, 
+                                  <a  href="https://cv.snu.ac.kr/index.php/bhhan/">Bohyung Han</a> 
+                              </li>
+                              <li> Research focuses on deep metric learning, multimodal and generative learning, and representation learning.</li>
+                              <li> Additional research experience includes domain generalization, active learning, and multimodal reasoning with large language and multimodal large language models (LLMs / MLLMs).</li>
+                            </ul>
 
                             <!-- <li class="bigger">GPA: 3.92/4.3</li> -->
                         </div>
@@ -783,10 +756,10 @@
                     <h3 class="mb-0">Applied Scientist II, Amazon</h3>
                     <div class="lead mb-3">Core Search – Visual Search (Amazon Lens Live)</div>
                     <ul>
-                      <li>Contributed to the research and development of multimodal retrieval and result-verification components for Amazon Lens Live, a real-time video-based visual search system serving millions of users.</li>
-                      <li>Designed and implemented a client-side query verification module that increased precision and reduced false positives in real-time visual search.</li>
-                      <li>Built a server-side retrieval validation framework ensuring intent-consistent and trustworthy search results.</li>
-                      <li>Enhanced the MLLM-based contextual retrieval pipeline to capture reasoning beyond pure visual similarity.</li>
+                        <li>Contributed to the research and development of multimodal retrieval and result-verification components for Amazon Lens Live, a real-time video-based visual search system serving millions of users.</li>
+                        <li>Designed and implemented a client-side query verification module that increased precision and reduced false positives in real-time visual search.</li>
+                        <li>Built a server-side retrieval validation framework ensuring intent-consistent and trustworthy search results.</li>
+                        <li>Enhanced the MLLM-based contextual retrieval pipeline to capture reasoning beyond pure visual similarity.</li>
                     </ul>
                   </div>
                   <div class="flex-shrink-0 text-md-right">
@@ -875,53 +848,53 @@
                             <div class="timeline-item clearfix">
                                 <h5 class="item-period ">2025</h5>
                             
-                            <li><b> Alumni Award</b>, <em><a  href="https://times.postech.ac.kr/news/articleView.html?idxno=23477">POSTECH</a></em></li>
+                          <li><b> Alumni Award</b>, <em><a  href="https://times.postech.ac.kr/news/articleView.html?idxno=23477">POSTECH</a></em></li>
                             </div>
 
                         <div class="timeline-item clearfix">
                             <h5 class="item-period ">2024</h5>
                         
-                        <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
-                            <em> &emsp; Winner - Efficient and Versatile Robust Fine-Tuning of Zero-shot Models </em> </li>
+                          <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                              <em> &emsp; Winner - Efficient and Versatile Robust Fine-Tuning of Zero-shot Models </em> </li>
                         </div>
                         
                         <div class="timeline-item clearfix">
                             <h5 class="item-period ">2023</h5>
-                        <li><b> Google PhD Fellowship Program</b>, <em><a  href="https://research.google/outreach/phd-fellowship/recipients/">Google</a></em> </li>
-                        <li><b> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
-                        <em> &emsp; Winner - Self-Taught Metric Learning without Labels </em> </li> 
-                        <li><b>BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
-                            <em> &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation </em> </li>
+                          <li><b> Google PhD Fellowship Program</b>, <em><a  href="https://research.google/outreach/phd-fellowship/recipients/">Google</a></em> </li>
+                          <li><b> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
+                          <em> &emsp; Winner - Self-Taught Metric Learning without Labels </em> </li> 
+                          <li><b>BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em><br> 
+                              <em> &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation </em> </li>
 
                         </div>
                             <div class="timeline-item clearfix">
                                 <h5 class="item-period ">2022</h5>
 
-                        <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
-                        <em> &emsp; Winner - Self-Taught Metric Learning without Labels </em> </li>
-                        <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
-                        <em> &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation </em> </li>
-                        <li><b> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em> <br>
-                        <em> &emsp; Winner - Embedding Transfer with Label Relaxation for Improved Metric Learning</em> </li>
-                        <li><b> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
-                        <em> &emsp; Gold Prize - Offline Active Domain Adaptation</em> </li>
-                        <li><b> CVPR Outstanding Reviewer</b>, <em><a href="https://cvpr2022.thecvf.com/outstanding-reviewers"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) </a></em> </li>
+                          <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                          <em> &emsp; Winner - Self-Taught Metric Learning without Labels </em> </li>
+                          <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em> <br>
+                          <em> &emsp; Winner - Combating Label Distribution Shift for Active Domain Adaptation </em> </li>
+                          <li><b> BK21 Best Paper Award</b>, <em>Dept.CSE, POSTECH </em> <br>
+                          <em> &emsp; Winner - Embedding Transfer with Label Relaxation for Improved Metric Learning</em> </li>
+                          <li><b> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
+                          <em> &emsp; Gold Prize - Offline Active Domain Adaptation</em> </li>
+                          <li><b> CVPR Outstanding Reviewer</b>, <em><a href="https://cvpr2022.thecvf.com/outstanding-reviewers"> IEEE Conference on Computer Vision and Pattern Recognition (CVPR) </a></em> </li>
 
                         </div>
                             <div class="timeline-item clearfix">
                                 <h5 class="item-period ">2021</h5>
-                        <li><b> ICT Paper contest</b>, <em><a  href="https://contest.etnews.com/13th/result.php">Etnews, Webcash Group, and KSFC </a> </em> <br>
-                        <em> &emsp; 2nd place Prize - Deep Metric Learning Beyond Binary Supervision  </em> </li>
-                        <li><b> SKT AI Fellowship</b>, <em>SK Telecom Co., Ltd</em> </li> 
-                        <li><b> POSTECHIAN Fellowship</b>, <em>POSTECH</em> </li>
-                        <li><b> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
-                        <em> &emsp; Grand Prize - Embedding Transfer with Label Relaxation for Improved Metric Learning </em> </li>
+                          <li><b> ICT Paper contest</b>, <em><a  href="https://contest.etnews.com/13th/result.php">Etnews, Webcash Group, and KSFC </a> </em> <br>
+                          <em> &emsp; 2nd place Prize - Deep Metric Learning Beyond Binary Supervision  </em> </li>
+                          <li><b> SKT AI Fellowship</b>, <em>SK Telecom Co., Ltd</em> </li> 
+                          <li><b> POSTECHIAN Fellowship</b>, <em>POSTECH</em> </li>
+                          <li><b> IPIU Best Paper Award</b>, <em>Workshop on Image Processing and Image Understanding (IPIU)</em> <br>
+                          <em> &emsp; Grand Prize - Embedding Transfer with Label Relaxation for Improved Metric Learning </em> </li>
                         </div>
                         <div class="timeline-item clearfix">
                             <h5 class="item-period ">2020</h5>
-                        <li><b> Naver Ph.D Fellowship</b>, <em><a  href="https://cse.postech.ac.kr/naver-phd-fellowship-award-%EC%8B%9C%EC%83%81">NAVER Corp.</a></em> </li>
-                        <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em><br>
-                        <em> &emsp; Winner - Deep Metric Learning Beyond Binary Supervision </em> </li>
+                          <li><b> Naver Ph.D Fellowship</b>, <em><a  href="https://cse.postech.ac.kr/naver-phd-fellowship-award-%EC%8B%9C%EC%83%81">NAVER Corp.</a></em> </li>
+                          <li><b> Qualcomm Innovation Fellowship Korea</b>, <em><a  href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/winners">Qualcomm Technologies Inc.</a></em><br>
+                          <em> &emsp; Winner - Deep Metric Learning Beyond Binary Supervision </em> </li>
                         </div>
                         </p>
                         </div>
@@ -937,25 +910,28 @@
                     <!-- <h3 class="mb-3"> <i class="fa-solid fa-glasses text-warning"></i> &nbsp Reviewer </h3> -->
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                        <h3 class="mb-0">International Conference Reviewer</h3> 
-                        <li> IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) <br>
-                            <b class="text-primary"> <em> &emsp; (Outstanding Reviewer in 2022 and 2025) </em> </b> </li>
-                        <li> International Conference on Computer Vision (<b>ICCV</b>) </li> 
-                        <li> European Conference on Computer Vision (<b>ECCV</b>) </li> 
-                        <li> International Conference on Machine Learning (<b>ICML</b>) </li> 
-                        <li> International Conference on Learning Representations (<b>ICLR</b>) </li> 
-                        <li> Conference on Neural Information Processing Systems (<b>NeurIPS</b>) </li> 
-                        <li> AAAI Conference on Artificial Intelligence (<b>AAAI</b>) </li> 
-                        <li> IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) </li> 
-                        <li> Asian Conference on Computer Vision (<b>ACCV</b>) </li>
-                        <li> International Conference on Machine Vision Applications (<b>MVA</b>) </li> 
-                        <li> International Conference on Pattern Recognition (<b>ICPR</b>) </li> 
+                        <h3 class="mb-3">International Conference Reviewer</h3> 
+                        <ul>
+                          <li> IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>) <b class="text-primary"> <em> - (Outstanding Reviewer in 2022 and 2025) </em> </b> </li>
+                          <li> International Conference on Computer Vision (<b>ICCV</b>) </li> 
+                          <li> European Conference on Computer Vision (<b>ECCV</b>) </li> 
+                          <li> International Conference on Machine Learning (<b>ICML</b>) </li> 
+                          <li> International Conference on Learning Representations (<b>ICLR</b>) </li> 
+                          <li> Conference on Neural Information Processing Systems (<b>NeurIPS</b>) </li> 
+                          <li> AAAI Conference on Artificial Intelligence (<b>AAAI</b>) </li> 
+                          <li> IEEE/CVF Winter Conference on Applications of Computer Vision (<b>WACV</b>) </li> 
+                          <li> Asian Conference on Computer Vision (<b>ACCV</b>) </li>
+                          <li> International Conference on Machine Vision Applications (<b>MVA</b>) </li> 
+                          <li> International Conference on Pattern Recognition (<b>ICPR</b>) </li> 
+                        </ul>
                         <br>
 
-                        <h3 class="mb-0">International Journal Reviewer</h3>
-                        <li> Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), IEEE </li> 
-                        <li> International Journal of Computer Vision (<b>IJCV</b>) </li>
-                        <li> Transactions on Image Processing (<b>TIP</b>), IEEE </li>
+                        <h3 class="mb-3">International Journal Reviewer</h3>
+                        <ul>
+                          <li> Transactions on Pattern Analysis and Machine Intelligence (<b>TPAMI</b>), IEEE </li> 
+                          <li> International Journal of Computer Vision (<b>IJCV</b>) </li>
+                          <li> Transactions on Image Processing (<b>TIP</b>), IEEE </li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -971,7 +947,9 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                        <li> Rehabilitation program creation method for muscle treatment and rehabilitation program providing apparatus for performing the method, <em>KR101648638B1, Republic of Korea</em> </li>
+                        <ul>
+                          <li> Rehabilitation program creation method for muscle treatment and rehabilitation program providing apparatus for performing the method, <em>KR101648638B1, Republic of Korea</em> </li>
+                        </ul>
                         </div>
                     </div>
                 </div>
