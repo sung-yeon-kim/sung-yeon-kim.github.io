@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Sungyeon Kim — Applied Scientist II at AWS Agentic AI, working on agent evaluation, LLM-as-a-Judge, and multimodal retrieval." />
+    <meta name="description" content="Sungyeon Kim — Applied Scientist working on agent evaluation, agentic retrieval, multimodal retrieval, and long-horizon LLM agents." />
     <meta name="author" content="Sungyeon Kim" />
     <title>Sungyeon Kim</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
@@ -31,6 +31,7 @@
                 <nav>
                     <ul class="visible-links">
                         <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#publications">Publications</a></li>
                         <li><a href="#education">Education</a></li>
@@ -75,31 +76,84 @@
             <section id="about">
                 <h2>About</h2>
                 <p>
-                    I am an Applied Scientist II on the <strong>Agentic AI</strong> team at AWS, working on
-                    <strong>agent evaluation, agentic memory, long-horizon reasoning, and multimodal language models</strong>
-                    for <a href="https://aws.amazon.com/bedrock/agentcore/" target="_blank">Amazon Bedrock AgentCore</a>
-                    and <a href="https://github.com/strands-agents" target="_blank">Strands Agents</a>. I build
-                    evaluation LLMs and meta-evaluation frameworks that automatically assess and validate agentic
-                    systems. Previously, I worked on
-                    multimodal embedding retrieval for
-                    <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a>
-                    on the Core Search team. I completed my
-                    Ph.D. in Computer Science and Engineering at
-                    <a href="http://cse.postech.ac.kr/" target="_blank">POSTECH</a>, advised by
-                    <a href="http://cvlab.postech.ac.kr/~suhakwak/" target="_blank">Prof. Suha Kwak</a>. During my
-                    Ph.D., I collaborated with
-                    <a href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev</a>. I also interned under
-                    and closely worked with
-                    <a href="https://de3ug.github.io/" target="_blank">Douglas Gray</a> at Amazon.
+                    I am an Applied Scientist II at AWS Agentic AI, where I work on
+                    <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html" target="_blank">AgentCore Evaluation</a>
+                    and <a href="https://github.com/strands-agents" target="_blank">Strands Agents</a>. I received my Ph.D. in
+                    Computer Science and Engineering from <a href="https://www.postech.ac.kr/eng/" target="_blank">POSTECH</a>,
+                    advised by Prof. <a href="http://cvlab.postech.ac.kr/~suhakwak/" target="_blank">Suha Kwak</a>.
+                    During my Ph.D., I collaborated with <a href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev</a>.
+                    I also interned under and closely worked with <a href="https://de3ug.github.io/" target="_blank">Douglas Gray</a>
+                    at Amazon.
                 </p>
                 <p>
-                    My research sits at the intersection of <strong>information retrieval and agentic AI</strong>,
-                    with one aim: building <strong>agents we can trust</strong>. Retrieval keeps what agents know
-                    accurate and grounded in evidence, and I care most about <strong>reliability</strong>, developing
-                    evaluation that measures and validates whether agents truly behave as intended. I first built
-                    search for people; now I build agents that retrieve, reason, and act over knowledge on their own,
-                    along with the evaluation that verifies they can be trusted at scale.
+                    At AWS, I contribute to agent evaluation systems for production agentic AI, including
+                    <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html" target="_blank">AgentCore Evaluation</a>
+                    and
+                    <a href="https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/" target="_blank">Multimodal Evaluators</a>.
+                    Previously at Amazon Core Search, I contributed to
+                    <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a>
+                    through multimodal retrieval, result verification, and MLLM-based re-ranking. During my internship,
+                    I developed <a href="https://arxiv.org/abs/2503.19868" target="_blank">GENIUS</a>, a generative retrieval
+                    framework for universal multimodal search.
                 </p>
+                <p>
+                    My research focuses on reliable agentic AI systems, agent evaluation, agentic retrieval,
+                    multimodal retrieval, MLLM-based retrieval and ranking, long-horizon LLM agents,
+                    agent memory and context management, and representation learning. I am also interested in
+                    VLA robot learning, reinforcement learning, PPO, and GRPO.
+                </p>
+            </section>
+
+            <!-- Products -->
+            <section id="products">
+                <h2>Products</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-logo-card">
+                            <img src="assets/img/logos/aws.svg" alt="AWS">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-kicker">AWS Agentic AI</div>
+                            <h3><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html" target="_blank">AgentCore Evaluation</a></h3>
+                            <p>Core contributor to AgentCore Evaluation; co-led first-party evaluation model training and evaluation for agent evaluation.</p>
+                            <div class="product-links">
+                                <a href="https://aws.amazon.com/bedrock/agentcore/" target="_blank">AgentCore</a>
+                                <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html" target="_blank">Docs</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-logo-card">
+                            <img src="https://avatars.githubusercontent.com/u/209155962?s=280&amp;v=4" alt="Strands Agents">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-kicker">Open-source agents</div>
+                            <h3><a href="https://github.com/strands-agents" target="_blank">Strands Agents</a></h3>
+                            <p>Core contributor for <a href="https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/" target="_blank">Multimodal Evaluators</a> in <a href="https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/" target="_blank">Strands Evals</a>.</p>
+                            <div class="product-links">
+                                <a href="https://github.com/strands-agents" target="_blank">GitHub</a>
+                                <a href="https://strandsagents.com/" target="_blank">Website</a>
+                                <a href="https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/" target="_blank">AWS ML Blog</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card product-card--wide">
+                        <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">
+                            <img class="product-image" src="https://assets.aboutamazon.com/d1/5c/837df41d4b4cb8266f1da4c57152/a-hero-2000-x-1129.jpg" alt="Amazon Lens Live mobile interface showing product matches">
+                        </a>
+                        <div class="product-body">
+                            <div class="product-kicker">Amazon Core Search</div>
+                            <h3><a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a></h3>
+                            <p>Contributed to multimodal retrieval, result verification, and MLLM-based re-ranking for real-time visual shopping search.</p>
+                            <div class="product-links">
+                                <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon News</a>
+                                <a href="https://www.aboutamazon.com/news/retail/visual-search-shopping-features" target="_blank">Visual Search</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </section>
 
             <!-- Experience -->
@@ -114,12 +168,11 @@
                                     <div class="role-title">Applied Scientist II — Agentic AI</div>
                                     <div class="role-org">Amazon Web Services · Bedrock AgentCore &amp; Strands Agents</div>
                                 </div>
-                                <div class="role-meta"><span class="place">Santa Clara, CA</span><br>Nov 2025 – Present</div>
+                                <div class="role-meta"><span class="place">Santa Clara, CA</span><br>Oct 2025 – Present</div>
                             </div>
                             <ul>
-                                <li>Building evaluation LLMs and meta-evaluation frameworks for LLM-as-a-Judge assessment of agentic systems.</li>
-                                <li>Research on agent orchestration, memory, context management, and long-horizon reasoning.</li>
-                                <li>Evaluated coding agents for Kiro, AWS's autonomous coding agent, including SWE-bench-style benchmarking.</li>
+                                <li>Core contributor for Multimodal Evaluators in <a href="https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/" target="_blank">Strands Evals</a> and AgentCore Evaluation.</li>
+                                <li>Co-led first-party evaluation model training and evaluation for agent evaluation.</li>
                             </ul>
                         </div>
                     </li>
@@ -131,11 +184,10 @@
                                     <div class="role-title">Applied Scientist II — Core Search</div>
                                     <div class="role-org">Amazon.com · Visual Search (<a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a>)</div>
                                 </div>
-                                <div class="role-meta"><span class="place">Palo Alto, CA</span><br>Aug 2025 – Nov 2025</div>
+                                <div class="role-meta"><span class="place">Palo Alto, CA</span><br>Aug 2025 – Oct 2025</div>
                             </div>
                             <ul>
-                                <li>Multimodal embedding retrieval and result verification for <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a>.</li>
-                                <li>Reasoning-driven re-ranking in an MLLM-based contextual retrieval pipeline.</li>
+                                <li>Contributed to multimodal retrieval, verification, and MLLM-based re-ranking for <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank">Amazon Lens Live</a>.</li>
                             </ul>
                         </div>
                     </li>
@@ -150,7 +202,7 @@
                                 <div class="role-meta"><span class="place">Palo Alto, CA</span><br>Jun 2024 – Sep 2024</div>
                             </div>
                             <ul>
-                                <li>Generative retrieval for universal multimodal search, published as <a href="https://arxiv.org/abs/2503.19868" target="_blank">GENIUS</a> (CVPR 2025).</li>
+                                <li>Worked with <a href="https://de3ug.github.io/" target="_blank">Douglas Gray</a> to develop <a href="https://arxiv.org/abs/2503.19868" target="_blank">GENIUS</a>, a generative retrieval framework for universal multimodal search; published at CVPR 2025.</li>
                             </ul>
                         </div>
                     </li>
@@ -188,19 +240,6 @@
                             <div class="pub-links">
                                 <a href="https://www.arxiv.org/abs/2504.02397" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
                                 <a href="publications/bibtex/cvpr_25_video.html" target="_blank"><i class="fas fa-book-open"></i> Bibtex</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="publication">
-                        <img class="pub-thumb" src="publications/thumbnails/kim2023universal.png" alt="">
-                        <div class="pub-body">
-                            <span class="pub-title">Learning Unified Distance Metric Across Diverse Data Distributions with Parameter-Efficient Transfer Learning</span>
-                            <div class="pub-authors"><span class="me">Sungyeon Kim</span>, Donghyun Kim, Suha Kwak</div>
-                            <div class="pub-badges"><span class="pub-venue">WACV 2025</span></div>
-                            <div class="pub-links">
-                                <a href="https://arxiv.org/abs/2309.08944" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
-                                <a href="publications/bibtex/wacv_25.html" target="_blank"><i class="fas fa-book-open"></i> Bibtex</a>
                             </div>
                         </div>
                     </li>
@@ -301,19 +340,6 @@
                                 <a href="https://github.com/sung-yeon-kim/STML-CVPR22" target="_blank"><i class="fab fa-github"></i> Code</a>
                                 <a href="http://cvlab.postech.ac.kr/research/STML/" target="_blank"><i class="fas fa-briefcase"></i> Project Page</a>
                                 <a href="publications/bibtex/cvpr_22.html" target="_blank"><i class="fas fa-book-open"></i> Bibtex</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="publication">
-                        <img class="pub-thumb" src="publications/thumbnails/bmvc2021.png" alt="">
-                        <div class="pub-body">
-                            <span class="pub-title">Learning to Generate Novel Classes for Deep Metric Learning</span>
-                            <div class="pub-authors">Kyungmoon Lee, <span class="me">Sungyeon Kim</span>, Seunghoon Hong, Suha Kwak</div>
-                            <div class="pub-badges"><span class="pub-venue">BMVC 2021</span></div>
-                            <div class="pub-links">
-                                <a href="https://www.bmvc2021-virtualconference.com/assets/papers/0631.pdf" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
-                                <a href="publications/bibtex/bmvc_21.html" target="_blank"><i class="fas fa-book-open"></i> Bibtex</a>
                             </div>
                         </div>
                     </li>
@@ -422,7 +448,8 @@
                                 <div class="role-meta"><span class="place">Pohang, S. Korea</span><br>Sep 2018 – Feb 2025</div>
                             </div>
                             <ul>
-                                <li>Advised by Prof. Suha Kwak. Dissertation: <a href="https://oasis.postech.ac.kr/handle/2014.oak/127450" target="_blank"><i>Towards Retrieval at Scale via Compact Embeddings and Generative Modeling</i></a>.</li>
+                                <li>Advised by Prof. Suha Kwak.</li>
+                                <li>Dissertation: <a href="https://oasis.postech.ac.kr/handle/2014.oak/127450" target="_blank"><i>Towards Retrieval at Scale via Compact Embeddings and Generative Modeling</i></a>.</li>
                                 <li>Graduated with the highest distinction across the CSE, GSAI, EE, and CITE departments (<a href="https://times.postech.ac.kr/news/articleView.html?idxno=23491" target="_blank">press</a>).</li>
                             </ul>
                         </div>
@@ -455,7 +482,6 @@
                     <li><span class="award-name">Qualcomm Innovation Fellowship Korea</span> <span class="award-year">(2022)</span> <span class="award-win">· Winner — <a href="https://arxiv.org/abs/2208.06604" target="_blank">Combating Label Distribution Shift for Active Domain Adaptation</a></span></li>
                     <li><span class="award-name">BK21 Best Paper Award</span> <span class="award-year">(2022)</span> <span class="award-win">· Winner — <a href="https://arxiv.org/abs/2103.14908" target="_blank">Embedding Transfer with Label Relaxation for Improved Metric Learning</a></span></li>
                     <li><span class="award-name">IPIU Best Paper Award</span> <span class="award-year">(2022)</span> <span class="award-win">· Gold Prize — Offline Active Domain Adaptation</span></li>
-                    <li><span class="award-name">CVPR Outstanding Reviewer</span> <span class="award-year">(2022)</span></li>
                     <li><span class="award-name">ICT Paper Contest</span> <span class="award-year">(2021)</span> <span class="award-win">· 2nd Place — <a href="https://arxiv.org/abs/1904.09626" target="_blank">Deep Metric Learning Beyond Binary Supervision</a></span></li>
                     <li><span class="award-name">SKT AI Fellowship</span> <span class="award-year">(2021)</span></li>
                     <li><span class="award-name">POSTECHIAN Fellowship</span> <span class="award-year">(2021)</span></li>
@@ -469,8 +495,8 @@
             <section id="service">
                 <h2>Professional Service</h2>
                 <ul class="service-list">
-                    <li><div class="service-label">Conference Reviewer</div><div class="award-org">CVPR, ICCV, ECCV, ICLR, ICML, NeurIPS, AAAI, BMVC, ACCV, WACV</div></li>
-                    <li><div class="service-label">Journal Reviewer</div><div class="award-org">IEEE TPAMI, IJCV, IEEE TIP</div></li>
+                    <li><div class="service-label">Conference Reviewer</div><div class="award-org">CVPR, ICCV, ECCV, ICLR, ICML, NeurIPS, AAAI, ACCV</div></li>
+                    <li><div class="service-label">Journal Reviewer</div><div class="award-org">IEEE TPAMI, IJCV</div></li>
                 </ul>
             </section>
 

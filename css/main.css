@@ -345,6 +345,85 @@ body.dark-mode .role-title{ color:#e8ecf1; }
 .entry-body ul{ margin:.5rem 0 0; }
 .entry-body li{ font-size:.96rem; }
 
+/* ---------- Selected Work ---------- */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:1rem;
+  margin:0 0 .3rem;
+}
+.product-card{
+  border:1px solid var(--border-color);
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--logo-bg-color);
+  box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+body.dark-mode .product-card{ background:#151a20; }
+.product-card--wide{ grid-column:1 / -1; }
+.product-image{
+  display:block;
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:var(--logo-bg-color);
+}
+.product-logo-card{
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--pub-chip-bg);
+  border-bottom:1px solid var(--border-color);
+}
+.product-logo-card img{
+  max-width:112px;
+  max-height:92px;
+  object-fit:contain;
+}
+.product-body{ padding:1rem 1.05rem 1.1rem; }
+.product-kicker{
+  margin-bottom:.25rem;
+  color:var(--muted-text-color);
+  font-family:var(--header-font-family);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.045em;
+  font-size:.9rem;
+}
+.product-body h3{
+  margin:.1rem 0 .35rem;
+  font-size:1.55rem;
+  line-height:1.05;
+}
+.product-body p{
+  margin:0 0 .8rem;
+  font-size:.95rem;
+  line-height:1.45;
+}
+.product-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+}
+.product-links a{
+  display:inline-flex;
+  align-items:center;
+  padding:.2rem .6rem .25rem;
+  border:1px solid var(--pub-chip-border);
+  border-radius:999px;
+  background:var(--pub-chip-bg);
+  color:var(--pub-chip-color);
+  font-size:.82rem;
+  font-weight:700;
+}
+.product-links a:hover{
+  color:var(--pub-chip-hover-color);
+  background:var(--pub-chip-hover-bg);
+  border-color:var(--pub-chip-hover-border);
+  text-decoration:none;
+}
+
 /* ---------- Publications ---------- */
 .pub-group-title{
   font-family:var(--header-font-family);
@@ -571,6 +650,10 @@ body.dark-mode .service-label{ color:#e8ecf1; }
   .experience-list > li, .education-list > li{ grid-template-columns:48px minmax(0,1fr); }
   .logo-placeholder{ width:48px; height:48px; font-size:.62rem; }
   .role-header{ flex-direction:column; align-items:flex-start; }
+
+  .product-grid{ grid-template-columns:1fr; }
+  .product-card--wide{ grid-column:auto; }
+  .product-image{ height:170px; }
 
   .publication{ grid-template-columns:76px minmax(0,1fr); gap:.85rem; }
   .pub-thumb{ width:76px; height:54px; }

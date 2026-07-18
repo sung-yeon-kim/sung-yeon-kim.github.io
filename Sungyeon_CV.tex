@@ -1,0 +1,199 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5} % For icons
+\usepackage{academicons}  % For academic icons like Google Scholar
+% \usepackage{extsizes}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    \textbf{\Huge \scshape Sungyeon Kim} \\ \vspace{5pt}
+    \fontsize{9}{11}\selectfont
+      \href{mailto:ksy9597@gmail.com}{\underline{ksy9597@gmail.com}} $|$
+      \href{https://sung-yeon-kim.github.io}{\underline{sung-yeon-kim.github.io}} \\ \vspace{1pt}
+    \faGithub \ \href{https://github.com/sung-yeon-kim}{\underline{sung-yeon-kim}} $|$
+    \faLinkedin \ \href{https://linkedin.com/in/sungyeonkim-b47b0a242}{\underline{sungyeonkim-b47b0a242}} $|$
+    \faGraduationCap \ \href{https://scholar.google.com/citations?user=05Ff7hcAAAAJ}{\underline{sungyeonkim-05Ff7hcAAAAJ}} \\ \vspace{1pt}
+\end{center}
+
+
+\section{Summary}
+\small{
+I am an Applied Scientist II at AWS Agentic AI, where I work on \href{https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html}{AgentCore Evaluation} and \href{https://github.com/strands-agents}{Strands Agents}. I received my Ph.D. in Computer Science and Engineering from \href{https://www.postech.ac.kr/eng/}{POSTECH}, advised by \href{http://cvlab.postech.ac.kr/~suhakwak/}{Prof. Suha Kwak}. At AWS, my work spans agent evaluation, reliability signals, evaluation methodology, and multimodal evaluators. Previously at Amazon Core Search, I contributed to \href{https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus}{Amazon Lens Live} through multimodal retrieval, result verification, and MLLM-based re-ranking. My research focuses on reliable agentic AI systems, agent evaluation, agentic retrieval, multimodal retrieval, MLLM-based retrieval/ranking, long-horizon LLM agents, agent memory and context management, and representation learning, with side interests in VLA robot learning and RL (PPO/GRPO).
+}
+
+\section{Work Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Amazon Web Services -- Agentic AI}{Oct 2025 -- Present}
+  {Applied Scientist II}{Santa Clara, CA}
+  \resumeItemListStart
+    \resumeItem{Core contributor for \href{https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/}{Multimodal Evaluators} in \href{https://aws.amazon.com/blogs/machine-learning/multimodal-evaluators-mllm-as-a-judge-for-image-to-text-tasks-in-strands-evals/}{Strands Evals} and \href{https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html}{AgentCore Evaluation}; co-led first-party evaluation model training and evaluation for agent evaluation.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Amazon.com -- Core Search}{Aug 2025 -- Oct 2025}
+  {Applied Scientist II}{Palo Alto, CA}
+  \resumeItemListStart
+    \resumeItem{Contributed multimodal retrieval, verification, and MLLM-based re-ranking for \href{https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus}{Amazon Lens Live}.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Amazon.com -- Core Search}{Jun 2024 -- Sep 2024}
+  {Applied Scientist Intern}{Palo Alto, CA}
+  \resumeItemListStart
+    \resumeItem{Developed \href{https://arxiv.org/abs/2503.19868}{GENIUS}, a generative retrieval framework for universal multimodal search; published at CVPR 2025.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Focus Areas}{: Agentic AI, agent evaluation, agentic retrieval, multimodal retrieval, MLLM-based retrieval/ranking, long-horizon LLM agents, agent memory and context management; side: VLA robot learning, RL, PPO/GRPO.} \\
+    \textbf{Research}{: \href{https://scholar.google.com/citations?user=05Ff7hcAAAAJ&hl=en}{15 publications} at CVPR, ICCV, and ECCV on multimodal retrieval, deep metric learning, domain generalization, and representation learning; 1.2k+ citations.} \\
+    \textbf{Skills}{: Python, PyTorch (Advanced), JAX (Basic), AWS Bedrock, vLLM, LiteLLM, Hydra, Slurm, Git; Languages: Korean (Native), English (Professional Working Proficiency).}
+  }}
+\end{itemize}
+
+\section{Selected Publications}
+\resumeItemListStart
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{https://arxiv.org/abs/2503.19868}{GENIUS: A Generative Framework for Universal Multimodal Search},'' \textit{CVPR 2025}.}
+  \resumeItem{Boseung Jeong et al., ``\href{https://www.arxiv.org/abs/2504.02397}{Learning Audio-guided Video Representation with Gated Attention for Video-Text Retrieval},'' \textit{CVPR 2025, Oral Presentation}.}
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{https://arxiv.org/abs/2408.05749}{Efficient and Versatile Robust Fine-Tuning of Zero-shot Models},'' \textit{ECCV 2024}.}
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{https://arxiv.org/pdf/2212.14258.pdf}{HIER: Metric Learning Beyond Class Labels via Hierarchical Regularization},'' \textit{CVPR 2023}.}
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{http://arxiv.org/abs/2205.01903}{Self-Taught Metric Learning without Labels},'' \textit{CVPR 2022}.}
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{https://arxiv.org/abs/2003.13911}{Proxy Anchor Loss for Deep Metric Learning},'' \textit{CVPR 2020, 580+ citations}.}
+  \resumeItem{\textbf{Sungyeon Kim} et al., ``\href{https://arxiv.org/abs/1904.09626}{Deep Metric Learning Beyond Binary Supervision},'' \textit{CVPR 2019, Oral Presentation}.}
+\resumeItemListEnd
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {\href{https://www.postech.ac.kr/eng/}{POSTECH (Pohang University of Science and Technology)}}{Pohang, Republic of Korea}
+    {Ph.D. in Computer Science and Engineering}{Sep 2018 -- Feb 2025}
+    \resumeItemListStart
+      \resumeItem{Advisor: \href{http://cvlab.postech.ac.kr/~suhakwak/}{Prof. Suha Kwak}. \\
+      Dissertation: \href{https://oasis.postech.ac.kr/handle/2014.oak/127450}{\textit{Towards Retrieval at Scale via Compact Embeddings and Generative Modeling}}.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {\href{https://www.dgist.ac.kr/en/}{DGIST (Daegu Gyeongbuk Institute of Science and Technology)}}{Daegu, Republic of Korea}
+    {B.S. in School of Undergraduate Studies}{Mar 2014 -- Feb 2018}
+\resumeSubHeadingListEnd
+
+\section{Honors and Service}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Honors}{: \href{https://research.google/programs-and-events/phd-fellowship/recipients/}{Google PhD Fellowship}, 2023; \href{https://www.qualcomm.com/research/university-relations/innovation-fellowship/2021-south-korea}{Qualcomm Innovation Fellowship Korea}, 2020, 2022, 2024.} \\
+    \textbf{Service}{: Reviewer for CVPR, ICCV, ECCV, ICLR, ICML, NeurIPS, AAAI, ACCV, TPAMI, IJCV.}
+  }}
+\end{itemize}
+
+\end{document}
